@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-biru: #41227a;
+  --color-merah: #e82724;
+  --font-sans: "Sora", sans-serif;
+}
