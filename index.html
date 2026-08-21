@@ -65,9 +65,10 @@
           class="relative w-full inline-flex items-center mt-20 z-10"
         >
           <input
+            id="searchWrapperbg"
             type="text"
             placeholder="Mau cari apa"
-            class="pl-5 pr-36 py-3.5 border-y border-white w-full xl:w-[450px] rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl focus:outline-0"
+            class="pl-5 pr-36 py-3.5 border-y border-white w-full xl:w-[450px] rounded-4xl bg-white/20 text-white backdrop-blur-xl shadow-2xl focus:outline-0"
           />
 
           <button
@@ -91,7 +92,9 @@
         </div>
         <div id="searchPlaceholder"></div>
 
-       <div class="relative mt-10 xl:-translate-y-5 w-screen left-1/2 -ml-[95vw]">
+        <div
+          class="relative mt-10 xl:-translate-y-5 w-screen left-1/2 -ml-[95vw]"
+        >
           <svg
             viewBox="0 0 1200 200"
             class="w-full overflow-visible"
@@ -1655,23 +1658,45 @@
 
     <!-- FLOATING BUTTON MOBILE -->
     <div class="fixed z-50 right-4 bottom-4">
-      <button
-        class="flex items-center gap-3 justify-center px-6 py-3 rounded-full bg-white/20 border-y border-white backdrop-blur-xs shadow-lg"
-      >
-        Menu
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="currentColor"
-          viewBox="0 0 16 16"
+      <div class="fixed z-50 right-4 bottom-4">
+        <button
+          id="floatingMenuBtn"
+          class="flex items-center gap-3 justify-center px-6 py-3 rounded-full bg-white/20 border-y border-white backdrop-blur-xs shadow-lg transition-colors duration-300"
         >
-          <path
-            fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-          />
-        </svg>
-      </button>
+          <span
+            id="menuText"
+            class="text-white font-medium transition-colors duration-300"
+          >
+            Menu
+          </span>
+          <svg
+            id="menuIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <defs>
+              <linearGradient
+                id="menuGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stop-color="var(--color-merah)" />
+                <stop offset="100%" stop-color="var(--color-biru)" />
+              </linearGradient>
+            </defs>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
     <footer></footer>
     <script>
@@ -1757,6 +1782,7 @@
     </script>
     <script>
       const searchWrapper = document.getElementById("searchWrapper");
+      const searchWrapperbg = document.getElementById("searchWrapperbg");
       const searchPlaceholder = document.getElementById("searchPlaceholder");
       const desiredTopm = 16;
       const searchOffset =
@@ -1775,6 +1801,8 @@
             "mt-0",
           );
           searchWrapper.classList.add("relative", "mt-20", "w-full");
+          searchWrapperbg.classList.remove("bg-white");
+          searchWrapperbg.classList.add("bg-white/20");
           searchPlaceholder.style.height = "0px";
           return;
         }
@@ -1796,6 +1824,9 @@
             "z-50",
             "mt-0",
           );
+
+          searchWrapperbg.classList.remove("bg-white/20", "text-white");
+          searchWrapperbg.classList.add("bg-white", "text-black");
         } else {
           searchWrapper.classList.remove(
             "fixed",
@@ -1807,8 +1838,62 @@
           );
           searchWrapper.classList.add("relative", "mt-20", "w-full");
           searchPlaceholder.style.height = "0px";
+
+          searchWrapperbg.classList.remove("bg-white", "text-black");
+          searchWrapperbg.classList.add("bg-white/20", "text-white");
         }
       });
+    </script>
+    <script>
+      const floatingMenuBtn = document.getElementById("floatingMenuBtn");
+      const menuText = document.getElementById("menuText");
+      const menuIcon = document.getElementById("menuIcon");
+      const desktopSection = document.getElementById("desktop");
+
+      const desktopObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // masuk section desktop → bg putih solid, teks & icon gradasi
+              floatingMenuBtn.classList.remove("bg-white/20");
+              floatingMenuBtn.classList.add("bg-white");
+
+              menuText.classList.remove("text-white");
+              menuText.classList.add(
+                "bg-gradient-to-r",
+                "from-merah",
+                "to-biru",
+                "bg-clip-text",
+                "text-transparent",
+              );
+
+              menuIcon
+                .querySelector("path")
+                .setAttribute("fill", "url(#menuGradient)");
+            } else {
+              // masih di hero → bg transparan, teks & icon putih
+              floatingMenuBtn.classList.remove("bg-white");
+              floatingMenuBtn.classList.add("bg-white/20");
+
+              menuText.classList.remove(
+                "bg-gradient-to-r",
+                "from-merah",
+                "to-biru",
+                "bg-clip-text",
+                "text-transparent",
+              );
+              menuText.classList.add("text-white");
+
+              menuIcon
+                .querySelector("path")
+                .setAttribute("fill", "currentColor");
+            }
+          });
+        },
+        { threshold: 0.05 },
+      );
+
+      desktopObserver.observe(desktopSection);
     </script>
   </body>
 </html>
