@@ -5,3 +5,5 @@
   --color-merah: #e82724;
   --font-sans: "Sora", sans-serif;
 }
+
+@custom-variant active-nav (&.active-nav);
