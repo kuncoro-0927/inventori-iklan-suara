@@ -37,16 +37,18 @@
         );
       "
     ></div>
+
     <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <nav class="flex items-center justify-center py-3">
         <img class="w-36" src="images/logo-putih.png" alt="" />
       </nav>
     </header>
+
     <main>
       <!-- SECTION HERO -->
       <section
         id="hero"
-        class="relative flex flex-col items-center min-h-screen xl:justify-center pt-32"
+        class="relative flex flex-col items-center min-h-screen xl:justify-center pt-44 xl:pt-32"
       >
         <div class="relative flex flex-col items-center">
           <span class="text-sm mb-2">Lorem ipsum dolor sit.</span>
@@ -58,7 +60,7 @@
           </h1>
         </div>
 
-        <div class="relative inline-flex items-center mt-7 z-10">
+        <div class="relative inline-flex items-center mt-20 z-10">
           <input
             type="text"
             placeholder="Mau cari apa"
@@ -85,7 +87,7 @@
           </button>
         </div>
 
-        <div class="w-full relative xl:-translate-y-5">
+        <div class="w-full relative mt-10 xl:-translate-y-5">
           <svg
             viewBox="0 0 1200 200"
             class="w-full overflow-visible"
@@ -103,23 +105,34 @@
             <use
               href="#ribbonPath"
               stroke="#FFD84D"
+              stroke-width="100"
+              stroke-linecap="butt"
+              fill="none"
+              class="block xl:hidden"
+            />
+
+            <use
+              href="#ribbonPath"
+              stroke="#FFD84D"
               stroke-width="45"
               stroke-linecap="butt"
               fill="none"
+              class="hidden xl:block"
             />
 
             <!-- teks di tengah tali, diulang otomatis -->
             <text
               class="fill-neutral-900 text-[13px] font-medium tracking-wide"
-              dy="4"
+              dy="8"
             >
               <textPath
                 href="#ribbonPath"
-                class="block xl:hidden text-sm"
+                class="block xl:hidden text-3xl"
                 startOffset="0%"
               >
                 Lorem. Ipsum. Dolor Sit Amet. &#8226; Lorem. Ipsum. Dolor Sit
-                Amet. &#8226;Lorem. Ipsum. Dolor Sit Amet. &#8226;
+                Amet. &#8226;Lorem. Ipsum. Dolor Sit Amet. &#8226; Lorem. Ipsum.
+                Dolor Sit Amet. &#8226;
               </textPath>
               <textPath
                 href="#ribbonPath"
@@ -1634,6 +1647,25 @@
       </section>
     </main>
 
+    <!-- FLOATING BUTTON MOBILE -->
+    <div class="fixed z-50 right-4 bottom-4">
+      <button
+        class="flex items-center justify-center w-14 h-14 rounded-full bg-white/40 backdrop-blur-xs shadow-lg border border-white/50"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+      </button>
+    </div>
     <footer></footer>
     <script>
       const navWrapper = document.getElementById("navWrapper");
