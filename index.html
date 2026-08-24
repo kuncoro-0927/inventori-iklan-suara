@@ -48,7 +48,7 @@
       <!-- SECTION HERO -->
       <section
         id="hero"
-        class="relative px-4 flex flex-col items-center min-h-screen xl:justify-center pt-44 lg:pt-32"
+        class="relative px-4 flex flex-col items-center min-h-screen xl:justify-center pt-44 lg:pt-32 overflow-x-hidden"
       >
         <div class="relative flex flex-col items-center">
           <span class="text-sm sm:text-base mb-2">Lorem ipsum dolor sit.</span>
@@ -92,9 +92,7 @@
         </div>
         <div id="searchPlaceholder"></div>
 
-        <div
-          class="relative mt-10 md:mt-20 lg:mt-0 lg:-translate-y-5 w-screen lg:w-full left-1/2 lg:left-0 -ml-[96vw] sm:-ml-[95vw] md:-ml-[96vw] lg:-ml-0"
-        >
+        <div class="relative mt-10 md:mt-20 lg:mt-0 lg:-translate-y-5 w-screen">
           <svg
             viewBox="0 0 1200 200"
             class="w-full overflow-visible"
@@ -106,6 +104,9 @@
                 d="M -40 150 Q 300 20, 600 100 T 1240 20"
                 fill="none"
               />
+              <clipPath id="ribbonClip">
+                <rect x="0" y="0" width="1200" height="200" />
+              </clipPath>
             </defs>
             <!-- tali kuning -->
             <use
