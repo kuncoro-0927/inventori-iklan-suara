@@ -7,3 +7,31 @@
 }
 
 @custom-variant active-nav (&.active-nav);
+
+#heroText {
+  dy: 1;
+}
+
+@media (min-width: 640px) {
+  #heroText {
+    dy: 8;
+  }
+}
+
+@media (min-width: 768px) {
+  #heroText {
+    dy: 6;
+  }
+}
+
+@media (min-width: 1024px) {
+  #heroText {
+    dy: 4;
+  }
+}
+
+@media (min-width: 1280px) {
+  #heroText {
+    dy: 2;
+  }
+}

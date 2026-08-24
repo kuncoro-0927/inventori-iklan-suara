@@ -40,7 +40,7 @@
 
     <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <nav class="flex items-center justify-center py-3">
-        <img class="w-36" src="images/logo-putih.png" alt="" />
+        <img class="w-36 md:w-44" src="images/logo-putih.png" alt="" />
       </nav>
     </header>
 
@@ -48,12 +48,12 @@
       <!-- SECTION HERO -->
       <section
         id="hero"
-        class="relative border px-4 flex flex-col items-center min-h-screen xl:justify-center pt-44 xl:pt-32"
+        class="relative px-4 flex flex-col items-center min-h-screen xl:justify-center pt-44 lg:pt-32"
       >
         <div class="relative flex flex-col items-center">
-          <span class="text-sm mb-2">Lorem ipsum dolor sit.</span>
+          <span class="text-sm sm:text-base mb-2">Lorem ipsum dolor sit.</span>
           <h1
-            class="flex items-center justify-center text-center text-3xl xl:text-5xl font-normal"
+            class="flex items-center justify-center text-center text-3xl sm:text-5xl xl:text-5xl font-normal"
           >
             Lorem ipsum dolor sit amet <br />
             consectetur.
@@ -62,18 +62,18 @@
 
         <div
           id="searchWrapper"
-          class="relative w-full inline-flex items-center mt-20 z-10"
+          class="relative w-full sm:w-[450px] mx-auto inline-flex items-center mt-20 md:mt-10 lg:mt-7 z-10"
         >
           <input
             id="searchWrapperbg"
             type="text"
             placeholder="Mau cari apa"
-            class="pl-5 pr-36 py-3.5 border-y border-white w-full xl:w-[450px] rounded-4xl bg-white/20 text-white backdrop-blur-xl shadow-2xl focus:outline-0"
+            class="pl-5 pr-36 py-3.5 border-y md:text-sm 2xl:text-base border-white w-full sm:w-[450px] rounded-4xl bg-white/20 text-white backdrop-blur-xl shadow-2xl focus:outline-0"
           />
 
           <button
             type="submit"
-            class="absolute text-xs right-1 flex items-center gap-3 bg-gradient-to-r w-fit from-merah to-biru px-6 py-3 xl:py-2.5 rounded-4xl text-white shadow-md cursor-pointer"
+            class="absolute text-xs md:text-sm 2xl:text-base right-1 flex items-center gap-3 bg-gradient-to-r w-fit from-merah to-biru px-6 py-3 xl:py-2.5 rounded-4xl text-white shadow-md cursor-pointer"
           >
             Search
             <svg
@@ -93,7 +93,7 @@
         <div id="searchPlaceholder"></div>
 
         <div
-          class="relative mt-10 xl:-translate-y-5 w-screen left-1/2 -ml-[95vw]"
+          class="relative mt-10 md:mt-20 lg:mt-0 lg:-translate-y-5 w-screen lg:w-full left-1/2 lg:left-0 -ml-[96vw] sm:-ml-[95vw] md:-ml-[96vw] lg:-ml-0"
         >
           <svg
             viewBox="0 0 1200 200"
@@ -107,68 +107,135 @@
                 fill="none"
               />
             </defs>
-
             <!-- tali kuning -->
             <use
               href="#ribbonPath"
               stroke="#FFD84D"
-              stroke-width="100"
+              stroke-width="140"
               stroke-linecap="butt"
               fill="none"
-              class="block xl:hidden"
+              class="block sm:hidden"
             />
-
             <use
               href="#ribbonPath"
               stroke="#FFD84D"
-              stroke-width="45"
+              stroke-width="110"
               stroke-linecap="butt"
               fill="none"
-              class="hidden xl:block"
+              class="hidden sm:block md:hidden"
+            />
+            <use
+              href="#ribbonPath"
+              stroke="#FFD84D"
+              stroke-width="80"
+              stroke-linecap="butt"
+              fill="none"
+              class="hidden md:block lg:hidden"
+            />
+            <use
+              href="#ribbonPath"
+              stroke="#FFD84D"
+              stroke-width="50"
+              stroke-linecap="butt"
+              fill="none"
+              class="hidden lg:block 2xl:hidden"
+            />
+            <use
+              href="#ribbonPath"
+              stroke="#FFD84D"
+              stroke-width="40"
+              stroke-linecap="butt"
+              fill="none"
+              class="hidden 2xl:block"
             />
 
             <!-- teks di tengah tali, diulang otomatis -->
             <text
-              class="fill-neutral-900 text-[13px] font-medium tracking-wide"
-              dy="8"
+              class="block sm:hidden fill-neutral-900 text-[13px] font-medium tracking-wide"
+              dy="10"
             >
               <textPath
                 href="#ribbonPath"
-                class="block xl:hidden text-3xl"
+                class="block lg:hidden text-4xl"
                 startOffset="0%"
               >
-                Lorem. Ipsum. Dolor Sit Amet. &#8226; Lorem. Ipsum. Dolor Sit
-                Amet. &#8226;Lorem. Ipsum. Dolor Sit Amet. &#8226; Lorem. Ipsum.
-                Dolor Sit Amet. &#8226;
+                Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda Artinya
+                &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda
+                Artinya &#8226;
               </textPath>
-              <textPath
-                href="#ribbonPath"
-                class="hidden xl:block"
-                startOffset="0%"
-              >
-                Lorem. Ipsum. Dolor Sit Amet. &#8226; Lorem. Ipsum. Dolor Sit
-                Amet. &#8226;Lorem. Ipsum. Dolor Sit Amet. &#8226;Lorem. Ipsum.
-                Dolor Sit Amet. &#8226;Lorem. Ipsum. Dolor Sit Amet.
-                &#8226;Lorem. Ipsum. Dolor Sit Amet. &#8226;
+            </text>
+            <text
+              class="sm:block hidden md:hidden fill-neutral-900 text-[13px] font-medium tracking-wide"
+              dy="10"
+            >
+              <textPath href="#ribbonPath" class="text-3xl" startOffset="0%">
+                Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda Artinya
+                &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda
+                Artinya &#8226;
+              </textPath>
+            </text>
+            <text
+              class="hidden md:block lg:hidden m fill-neutral-900 text-[13px] font-medium tracking-wide"
+              dy="10"
+            >
+              <textPath href="#ribbonPath" class="text-xl" startOffset="0%">
+                Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda Artinya
+                &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda
+                Artinya &#8226; Tanpa Suara Beda Artinya &#8226;
+              </textPath>
+            </text>
+            <text
+              class="hidden lg:block 2xl:hidden fill-neutral-900 text-[13px] font-medium tracking-wide"
+              dy="5"
+            >
+              <textPath href="#ribbonPath" class="text-sm" startOffset="0%">
+                Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda Artinya
+                &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda
+                Artinya &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa Suara
+                Beda Artinya &#8226; Tanpa Suara Beda Artinya &#8226;
+              </textPath>
+            </text>
+
+            <text
+              class="hidden 2xl:block fill-neutral-900 text-[13px] font-medium tracking-wide"
+              dy="5"
+            >
+              <textPath href="#ribbonPath" class="text-xs" startOffset="0%">
+                Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda Artinya
+                &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa Suara Beda
+                Artinya &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa Suara
+                Beda Artinya &#8226; Tanpa Suara Beda Artinya &#8226; Tanpa
+                Suara Beda Artinya &#8226;Tanpa Suara Beda Artinya &#8226;
               </textPath>
             </text>
           </svg>
         </div>
 
-        <div id="navWrapper" class="hidden flex justify-center py-2 -mt-10">
+        <div id="navWrapper" class="hidden lg:flex justify-center py-2 -mt-7">
           <div id="navGroup" class="flex items-center gap-3">
             <ul
               id="navList"
-              class="flex items-center gap-2 border-y border-white py-1 px-6 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl"
+              class="flex lg:text-sm 2xl:text-base items-center gap-2 border-y border-white py-1 px-6 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl"
             >
               <li class="mr-10">
-                <img class="w-24" src="images/logo-putih.png" alt="" />
+                <img
+                  id="logoPutih"
+                  class="w-24"
+                  src="images/logo-putih.png"
+                  alt=""
+                />
+                <img
+                  id="logoColor"
+                  class="hidden w-24"
+                  src="images/logo_suara.com.png"
+                  alt=""
+                />
               </li>
               <li>
                 <a
                   href="#desktop"
                   data-target="desktop"
-                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm"
+                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -189,110 +256,139 @@
                 <a
                   href="#mobile"
                   data-target="mobile"
-                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm"
+                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                     fill="currentColor"
-                    class="bi bi-phone"
+                    class="bi bi-laptop"
                     viewBox="0 0 16 16"
                   >
                     <path
-                      d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                      d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"
                     />
-                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
                   </svg>
-
                   Mobile
                 </a>
               </li>
-              <li class="flex items-center gap-2 py-3 px-5 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-card-text"
-                  viewBox="0 0 16 16"
+              <li>
+                <a
+                  href="#article"
+                  data-target="article"
+                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
                 >
-                  <path
-                    d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"
-                  />
-                  <path
-                    d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"
-                  />
-                </svg>
-                Article
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-laptop"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"
+                    />
+                  </svg>
+                  Article
+                </a>
               </li>
-              <li class="flex items-center gap-2 py-3 px-5 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-layout-sidebar"
-                  viewBox="0 0 16 16"
+              <li>
+                <a
+                  href="#widget"
+                  data-target="widget"
+                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
                 >
-                  <path
-                    d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2z"
-                  />
-                </svg>
-
-                Widget
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-laptop"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"
+                    />
+                  </svg>
+                  Widget
+                </a>
               </li>
-              <li class="flex items-center gap-2 py-3 px-5 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-grid-1x2"
-                  viewBox="0 0 16 16"
+              <li>
+                <a
+                  href="#custom"
+                  data-target="custom"
+                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
                 >
-                  <path
-                    d="M6 1H1v14h5zm9 0h-5v5h5zm0 9v5h-5v-5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1z"
-                  />
-                </svg>
-                Custom
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-laptop"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"
+                    />
+                  </svg>
+                  Custom
+                </a>
               </li>
-              <li class="flex items-center gap-2 py-3 px-5 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-play-btn"
-                  viewBox="0 0 16 16"
+              <li>
+                <a
+                  href="#vob"
+                  data-target="vob"
+                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
                 >
-                  <path
-                    d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"
-                  />
-                  <path
-                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"
-                  />
-                </svg>
-                VOB
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-laptop"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"
+                    />
+                  </svg>
+                  VOB
+                </a>
               </li>
             </ul>
-            <button
-              id="searchBtn"
-              class="hidden items-center justify-center gap-2 border-y border-white w-14 h-14 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                class="bi bi-search"
-                viewBox="0 0 16 16"
+            <div class="relative">
+              <button
+                id="searchBtn"
+                class="hidden items-center justify-center gap-2 border-y border-white w-14 h-14 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl"
               >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+              </button>
+
+              <!-- dropdown input, defaultnya hidden -->
+              <div
+                id="searchDropdown"
+                class="hidden absolute top-full right-0 mt-3 w-72 z-50"
+              >
+                <input
+                  type="text"
+                  placeholder="Mau cari apa"
+                  class="w-full px-5 py-3 border-y border-white rounded-full bg-white/70 backdrop-blur-xs shadow-xl focus:outline-0 text-black"
                 />
-              </svg>
-            </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -300,14 +396,16 @@
       <!-- SECTION DESKTOP -->
       <section
         id="desktop"
-        class="scroll-mt-20 relative p-4 xl:py-20 xl:px-24 rounded-4xl xl:mt-20"
+        class="scroll-mt-20 relative p-4 lg:py-20 lg:px-10 xl:px-24 rounded-4xl xl:mt-20"
       >
         <h2
-          class="text-2xl text-center xl:text-4xl font-semibold flex justify-center mb-7 xl:mb-14"
+          class="text-2xl md:text-4xl text-center xl:text-4xl font-semibold flex justify-center mb-7 xl:mb-14"
         >
           Banner Iklan Desktop
         </h2>
-        <div class="grid grid-cols-1 xl:grid-cols-3 gap-5">
+        <div
+          class="justify-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto 2xl:max-w-[1280px]"
+        >
           <div
             class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
@@ -318,10 +416,10 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg mt-3">Top Leaderboard</h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -336,9 +434,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -358,8 +456,10 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -379,7 +479,7 @@
                   />
                 </svg>
                 Live Preview
-              </button>
+              </a>
             </div>
           </div>
           <div
@@ -980,12 +1080,16 @@
       <!-- SECTION MOBILE -->
       <section
         id="mobile"
-        class="hidden scroll-mt-20 relative py-20 px-24 rounded-4xl"
+        class="scroll-mt-20 relative p-4 lg:py-20 lg:px-10 xl:px-24 rounded-4xl xl:mt-20"
       >
-        <h2 class="text-4xl font-semibold flex justify-center mb-14">
+        <h2
+          class="text-2xl md:text-4xl text-center xl:text-4xl font-semibold flex justify-center mb-7 xl:mb-14"
+        >
           Banner Iklan Mobile
         </h2>
-        <div class="grid grid-cols-3 gap-5">
+        <div
+          class="justify-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
           <div
             class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
@@ -1657,7 +1761,7 @@
     </main>
 
     <!-- FLOATING BUTTON MOBILE -->
-    <div class="fixed z-50 right-4 bottom-4">
+    <div class="fixed lg:hidden z-50 right-4 bottom-4">
       <div class="fixed z-50 right-4 bottom-4">
         <button
           id="floatingMenuBtn"
@@ -1665,15 +1769,15 @@
         >
           <span
             id="menuText"
-            class="text-white font-medium transition-colors duration-300"
+            class="text-white md:text-xl transition-colors duration-300"
           >
             Menu
           </span>
           <svg
             id="menuIcon"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="28"
+            height="28"
             fill="currentColor"
             viewBox="0 0 16 16"
           >
@@ -1704,35 +1808,75 @@
       const navGroup = document.getElementById("navGroup");
       const navList = document.getElementById("navList");
       const searchBtn = document.getElementById("searchBtn");
-      const desiredTop = 18;
+      const searchDropdown = document.getElementById("searchDropdown");
+      const logoPutih = document.getElementById("logoPutih");
+      const logoColor = document.getElementById("logoColor");
+      const desiredTop = 10;
       const navOffset =
         navWrapper.getBoundingClientRect().top + window.scrollY - desiredTop;
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > navOffset) {
-          // fixed di WRAPPER (full width), bukan di navGroup
           navWrapper.classList.add(
             "fixed",
-            "top-14",
+            "top-11",
             "left-0",
             "right-0",
             "z-50",
           );
           navWrapper.style.height = "auto";
 
-          searchBtn.classList.remove("hidden");
-          searchBtn.classList.add("flex");
+          navList.classList.remove("bg-white/20", "text-white");
+          navList.classList.add(
+            "bg-white/70",
+            "border-black/10",
+            "text-black",
+            "shadow-md",
+          );
+
+          searchBtn.classList.remove("hidden", "bg-white/70", "text-white");
+          searchBtn.classList.add("flex", "bg-white/70", "text-black");
+          logoPutih.classList.add("hidden");
+          logoColor.classList.remove("hidden");
         } else {
           navWrapper.classList.remove(
             "fixed",
-            "top-14",
+            "top-11",
             "left-0",
             "right-0",
             "z-50",
           );
 
-          searchBtn.classList.add("hidden");
-          searchBtn.classList.remove("flex");
+          navList.classList.remove(
+            "bg-white/70",
+            "border-black/10",
+            "text-black",
+            "shadow-md",
+          );
+          navList.classList.add("bg-white/20");
+
+          searchBtn.classList.add("hidden", "bg-white/70", "text-white");
+          searchBtn.classList.remove("flex", "bg-white/70", "text-black");
+          logoPutih.classList.remove("hidden");
+          logoColor.classList.add("hidden");
+
+          // searchBtn ikut hidden -> dropdown-nya juga harus ditutup
+          searchDropdown.classList.add("hidden");
+        }
+      });
+
+      searchBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        searchDropdown.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !searchDropdown.classList.contains("hidden") &&
+          !searchDropdown.contains(e.target) &&
+          !searchBtn.contains(e.target)
+        ) {
+          searchDropdown.classList.add("hidden");
         }
       });
     </script>
@@ -1784,7 +1928,7 @@
       const searchWrapper = document.getElementById("searchWrapper");
       const searchWrapperbg = document.getElementById("searchWrapperbg");
       const searchPlaceholder = document.getElementById("searchPlaceholder");
-      const desiredTopm = 16;
+      const desiredTopm = 10;
       const searchOffset =
         searchWrapper.getBoundingClientRect().top +
         window.scrollY -
@@ -1800,8 +1944,13 @@
             "z-50",
             "mt-0",
           );
-          searchWrapper.classList.add("relative", "mt-20", "w-full");
-          searchWrapperbg.classList.remove("bg-white");
+          searchWrapper.classList.add(
+            "relative",
+            "mt-20",
+            "md:mt-10",
+            "w-full",
+          );
+          searchWrapperbg.classList.remove("bg-white/70");
           searchWrapperbg.classList.add("bg-white/20");
           searchPlaceholder.style.height = "0px";
           return;
@@ -1815,7 +1964,12 @@
             const marginTop = parseFloat(style.marginTop) || 0;
             searchPlaceholder.style.height = rect.height + marginTop + "px";
           }
-          searchWrapper.classList.remove("relative", "mt-20", "w-full");
+          searchWrapper.classList.remove(
+            "relative",
+            "mt-20",
+            "md:mt-10",
+            "w-full",
+          );
           searchWrapper.classList.add(
             "fixed",
             "top-[16px]",
@@ -1826,7 +1980,7 @@
           );
 
           searchWrapperbg.classList.remove("bg-white/20", "text-white");
-          searchWrapperbg.classList.add("bg-white", "text-black");
+          searchWrapperbg.classList.add("bg-white/70", "text-black");
         } else {
           searchWrapper.classList.remove(
             "fixed",
@@ -1856,7 +2010,7 @@
             if (entry.isIntersecting) {
               // masuk section desktop → bg putih solid, teks & icon gradasi
               floatingMenuBtn.classList.remove("bg-white/20");
-              floatingMenuBtn.classList.add("bg-white");
+              floatingMenuBtn.classList.add("bg-white/70");
 
               menuText.classList.remove("text-white");
               menuText.classList.add(
@@ -1872,7 +2026,7 @@
                 .setAttribute("fill", "url(#menuGradient)");
             } else {
               // masih di hero → bg transparan, teks & icon putih
-              floatingMenuBtn.classList.remove("bg-white");
+              floatingMenuBtn.classList.remove("bg-white/70");
               floatingMenuBtn.classList.add("bg-white/20");
 
               menuText.classList.remove(
