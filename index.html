@@ -13,6 +13,7 @@
     />
   </head>
   <body class="relative text-white">
+    <!-- BACKGROUND -->
     <div
       class="absolute inset-0 bg-gradient-to-r from-merah to-biru pointer-events-none"
     ></div>
@@ -27,6 +28,8 @@
         );
       "
     ></div>
+
+    <!-- OVERLAY GELAP KE BAWAH -->
     <div
       class="absolute inset-0"
       style="
@@ -38,9 +41,10 @@
       "
     ></div>
 
+    <!-- HEADER LOGO -->
     <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <nav class="flex items-center justify-center py-3">
-        <img class="w-36 md:w-44" src="images/logo-putih.png" alt="" />
+        <img class="w-36 md:w-44 2xl:w-56" src="images/logo-putih.png" alt="" />
       </nav>
     </header>
 
@@ -48,12 +52,14 @@
       <!-- SECTION HERO -->
       <section
         id="hero"
-        class="relative px-4 flex flex-col items-center min-h-screen xl:justify-center pt-44 lg:pt-32 overflow-x-hidden"
+        class="relative px-4 flex flex-col items-center xl:justify-center pt-44 lg:pt-32 overflow-x-hidden"
       >
-        <div class="relative flex flex-col items-center">
-          <span class="text-sm sm:text-base mb-2">Lorem ipsum dolor sit.</span>
+        <div class="relative flex flex-col items-center mt-0">
+          <span class="text-sm sm:text-base 2xl:text-lg mb-2"
+            >Lorem ipsum dolor sit.</span
+          >
           <h1
-            class="flex items-center justify-center text-center text-3xl sm:text-5xl xl:text-5xl font-normal"
+            class="flex items-center justify-center text-center text-3xl sm:text-5xl xl:text-5xl 2xl:text-6xl font-normal xl:bg-amber-300 2xl:bg-green-400"
           >
             Lorem ipsum dolor sit amet <br />
             consectetur.
@@ -62,18 +68,18 @@
 
         <div
           id="searchWrapper"
-          class="relative w-full sm:w-[450px] mx-auto inline-flex items-center mt-20 md:mt-10 lg:mt-7 z-10"
+          class="relative w-full sm:w-[450px] 2xl:w-[500px] mx-auto inline-flex items-center mt-20 md:mt-10 lg:mt-7 z-10"
         >
           <input
             id="searchWrapperbg"
             type="text"
             placeholder="Mau cari apa"
-            class="pl-5 pr-36 py-3.5 border-y md:text-sm 2xl:text-base border-white w-full sm:w-[450px] rounded-4xl bg-white/20 text-white backdrop-blur-xl shadow-2xl focus:outline-0"
+            class="pl-5 pr-36 py-3.5 border-y md:text-sm 2xl:text-lg border-white w-full sm:w-[450px] 2xl:w-[500px] rounded-4xl bg-white/20 text-white backdrop-blur-xl shadow-2xl focus:outline-0"
           />
 
           <button
             type="submit"
-            class="absolute text-xs md:text-sm 2xl:text-base right-1 flex items-center gap-3 bg-gradient-to-r w-fit from-merah to-biru px-6 py-3 xl:py-2.5 rounded-4xl text-white shadow-md cursor-pointer"
+            class="absolute text-xs md:text-sm 2xl:text-lg right-1 flex items-center gap-3 bg-gradient-to-r w-fit from-merah to-biru px-6 py-3 xl:py-2.5 rounded-4xl text-white shadow-md cursor-pointer"
           >
             Search
             <svg
@@ -92,7 +98,9 @@
         </div>
         <div id="searchPlaceholder"></div>
 
-        <div class="relative mt-10 md:mt-20 lg:mt-0 lg:-translate-y-5 w-screen">
+        <div
+          class="relative mt-10 md:mt-20 lg:mt-0 lg:-translate-y-5 w-screen 2xl:max-w-[2560px]  py-2"
+        >
           <svg
             viewBox="0 0 1200 200"
             class="w-full overflow-visible"
@@ -216,18 +224,18 @@
           <div id="navGroup" class="flex items-center gap-3">
             <ul
               id="navList"
-              class="flex lg:text-sm 2xl:text-base items-center gap-2 border-y border-white py-1 px-6 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl"
+              class="flex lg:text-sm 2xl:text-lg items-center gap-2 2xl:gap-5 border-y border-white py-1 pl-6 pr-1 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl"
             >
-              <li class="mr-10">
+              <li class="mr-10 2xl:mr-20">
                 <img
                   id="logoPutih"
-                  class="w-24"
+                  class="w-24 2xl:w-32"
                   src="images/logo-putih.png"
                   alt=""
                 />
                 <img
                   id="logoColor"
-                  class="hidden w-24"
+                  class="hidden w-24 2xl:w-32"
                   src="images/logo_suara.com.png"
                   alt=""
                 />
@@ -236,7 +244,7 @@
                 <a
                   href="#desktop"
                   data-target="desktop"
-                  class="nav-link flex items-center gap-2 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
+                  class="nav-link flex items-center gap-3 py-3 px-5 rounded-full hover:bg-gradient-to-r hover:from-merah hover:to-biru cursor-pointer hover:shadow-md hover:text-white duration-200 transition-colors active-nav:bg-gradient-to-r active-nav:from-merah active-nav:to-biru active-nav:shadow-sm active-nav:text-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -400,7 +408,7 @@
         class="scroll-mt-20 relative p-4 lg:py-20 lg:px-10 xl:px-24 rounded-4xl xl:mt-20"
       >
         <h2
-          class="text-2xl md:text-4xl text-center xl:text-4xl font-semibold flex justify-center mb-7 xl:mb-14"
+          class="text-2xl md:text-4xl 2xl:text-5xl text-center xl:text-4xl font-semibold flex justify-center mb-7 xl:mb-14"
         >
           Banner Iklan Desktop
         </h2>
@@ -417,17 +425,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Leaderboard</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
               <div class="mb-3 flex items-center gap-3">
                 <a
-                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -460,14 +470,12 @@
               <a
                 href="/data/Top-Leaderboard/index.html"
                 target="_blank"
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -1803,7 +1811,11 @@
         </button>
       </div>
     </div>
+
+    <!-- FOOTER -->
     <footer></footer>
+
+    <!-- SCRIPT MENU -->
     <script>
       const navWrapper = document.getElementById("navWrapper");
       const navGroup = document.getElementById("navGroup");
@@ -1812,7 +1824,7 @@
       const searchDropdown = document.getElementById("searchDropdown");
       const logoPutih = document.getElementById("logoPutih");
       const logoColor = document.getElementById("logoColor");
-      const desiredTop = 10;
+      const desiredTop = 20;
       const navOffset =
         navWrapper.getBoundingClientRect().top + window.scrollY - desiredTop;
 
@@ -1881,6 +1893,8 @@
         }
       });
     </script>
+
+    <!-- SCRIPT LINK MENU -->
     <script>
       const navLinks = document.querySelectorAll(".nav-link");
       const sections = document.querySelectorAll("main section[id]");
@@ -1925,6 +1939,8 @@
 
       sections.forEach((section) => observer.observe(section));
     </script>
+
+    <!-- SCRIPT SEARCH BAR -->
     <script>
       const searchWrapper = document.getElementById("searchWrapper");
       const searchWrapperbg = document.getElementById("searchWrapperbg");
@@ -1994,11 +2010,13 @@
           searchWrapper.classList.add("relative", "mt-20", "w-full");
           searchPlaceholder.style.height = "0px";
 
-          searchWrapperbg.classList.remove("bg-white", "text-black");
+          searchWrapperbg.classList.remove("bg-white/70", "text-black");
           searchWrapperbg.classList.add("bg-white/20", "text-white");
         }
       });
     </script>
+
+    <!-- SCRIPT FLOATING BUTTON -->
     <script>
       const floatingMenuBtn = document.getElementById("floatingMenuBtn");
       const menuText = document.getElementById("menuText");
