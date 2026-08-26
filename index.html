@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Inventori Iklan Suara.com</title>
     <link href="css/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,6 +78,7 @@
           />
 
           <button
+            id="searchSubmitBtn"
             type="submit"
             class="absolute text-xs md:text-sm 2xl:text-lg right-1 flex items-center gap-3 bg-gradient-to-r w-fit from-merah to-biru px-6 py-3 xl:py-2.5 rounded-4xl text-white shadow-md cursor-pointer"
           >
@@ -220,7 +221,10 @@
           </svg>
         </div>
 
-        <div id="navWrapper" class="hidden lg:flex justify-center py-2 -mt-7">
+        <div
+          id="navWrapper"
+          class="hidden lg:flex justify-center py-2 -translate-y-16"
+        >
           <div id="navGroup" class="flex items-center gap-3">
             <ul
               id="navList"
@@ -370,7 +374,7 @@
             <div class="relative">
               <button
                 id="searchBtn"
-                class="hidden items-center justify-center gap-2 border-y border-white w-14 h-14 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl"
+                class="hidden items-center justify-center gap-2 border-y border-white w-14 h-14 rounded-4xl bg-white/20 backdrop-blur-xl shadow-xl cursor-pointer hover:-translate-y-0.5 duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -392,6 +396,7 @@
                 class="hidden absolute top-full right-0 mt-3 w-72 z-50"
               >
                 <input
+                  id="searchScrollInput"
                   type="text"
                   placeholder="Mau cari apa"
                   class="w-full px-5 py-3 border-y border-white rounded-full bg-white/70 backdrop-blur-xs shadow-xl focus:outline-0 text-black"
@@ -400,6 +405,7 @@
             </div>
           </div>
         </div>
+        <div id="navPlaceholder"></div>
       </section>
 
       <!-- SECTION DESKTOP -->
@@ -416,7 +422,83 @@
           class="justify-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto 2xl:max-w-[1280px]"
         >
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+          >
+            <img
+              class="w-full rounded-3xl shadow-sm"
+              src="images/layout3.svg"
+              alt=""
+            />
+
+            <div class="flex flex-col items-start gap-3 px-1">
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
+              <div class="mb-3 flex items-center gap-3">
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-xs 2xl:text-base px-3 py-2 w-fit"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                    />
+                  </svg>
+                  Video Preview
+                </a>
+                <div
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-download"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+                    />
+                    <path
+                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
+                    />
+                  </svg>
+                  Download
+                </div>
+              </div>
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
+                  />
+                </svg>
+                Live Preview
+              </a>
+            </div>
+          </div>
+          <div
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -492,7 +574,7 @@
             </div>
           </div>
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -501,17 +583,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -519,9 +603,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -541,15 +625,15 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -562,11 +646,11 @@
                   />
                 </svg>
                 Live Preview
-              </button>
+              </a>
             </div>
           </div>
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -575,17 +659,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -593,9 +679,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -615,15 +701,15 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -636,11 +722,11 @@
                   />
                 </svg>
                 Live Preview
-              </button>
+              </a>
             </div>
           </div>
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -649,17 +735,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -667,9 +755,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -689,15 +777,15 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -710,11 +798,11 @@
                   />
                 </svg>
                 Live Preview
-              </button>
+              </a>
             </div>
           </div>
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -723,17 +811,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -741,9 +831,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -763,15 +853,15 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -784,11 +874,11 @@
                   />
                 </svg>
                 Live Preview
-              </button>
+              </a>
             </div>
           </div>
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -797,17 +887,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -815,9 +907,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -837,15 +929,15 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -858,11 +950,11 @@
                   />
                 </svg>
                 Live Preview
-              </button>
+              </a>
             </div>
           </div>
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -871,17 +963,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard
+              </h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -889,9 +983,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -911,15 +1005,15 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -932,11 +1026,12 @@
                   />
                 </svg>
                 Live Preview
-              </button>
+              </a>
             </div>
           </div>
+
           <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
+            class="product-card shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
           >
             <img
               class="w-full rounded-3xl shadow-sm"
@@ -945,17 +1040,19 @@
             />
 
             <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
+              <h2 class="font-medium text-lg 2xl:text-2xl mt-3">
+                Top Leaderboard xyz
+              </h2>
               <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                <a
+                  class="flex items-center gap-2 border-y border-white bg-white/5 hover:-translate-y-0.5 duration-300 hover:shadow-xs cursor-pointer backdrop-blur-xs rounded-3xl text-xs lg:text-sm 2xl:text-base px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    class="bi bi-youtube w-4 h-4 2xl:w-5 2xl:h-5"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -963,9 +1060,9 @@
                     />
                   </svg>
                   Video Preview
-                </div>
+                </a>
                 <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
+                  class="hidden flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -985,15 +1082,15 @@
                   Download
                 </div>
               </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
+              <a
+                href="/data/Top-Leaderboard/index.html"
+                target="_blank"
+                class="flex items-center shrink-0 gap-3 justify-center text-sm 2xl:text-lg bg-gradient-to-r from-merah to-biru py-3 w-full hover:-translate-y-0.5 hover:shadow-2xl duration-300 rounded-full"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
                   fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
+                  class="bi bi-box-arrow-up-right w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -1006,763 +1103,7 @@
                   />
                 </svg>
                 Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION MOBILE -->
-      <section
-        id="mobile"
-        class="scroll-mt-20 relative p-4 lg:py-20 lg:px-10 xl:px-24 rounded-4xl xl:mt-20"
-      >
-        <h2
-          class="text-2xl md:text-4xl text-center xl:text-4xl font-semibold flex justify-center mb-7 xl:mb-14"
-        >
-          Banner Iklan Mobile
-        </h2>
-        <div
-          class="justify-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-        >
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
-            </div>
-          </div>
-          <div
-            class="shadow-xl bg-white/10 backdrop-blur-xs border border-white px-2 py-2 rounded-3xl w-fit"
-          >
-            <img
-              class="w-full rounded-3xl shadow-sm"
-              src="images/layout3.svg"
-              alt=""
-            />
-
-            <div class="flex flex-col items-start gap-3 px-1">
-              <h2 class="font-medium text-lg mt-3">Top Banner</h2>
-              <div class="mb-3 flex items-center gap-3">
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-youtube"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                    />
-                  </svg>
-                  Video Preview
-                </div>
-                <div
-                  class="flex items-center gap-2 border-y border-white bg-white/5 shadow-xs backdrop-blur-xs rounded-3xl text-xs px-3 py-2 w-fit"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-download"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                    />
-                    <path
-                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                  </svg>
-                  Download
-                </div>
-              </div>
-              <button
-                class="flex items-center gap-3 justify-center bg-gradient-to-r from-merah to-biru py-3 w-full rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-box-arrow-up-right"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                  />
-                </svg>
-                Live Preview
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1771,45 +1112,166 @@
 
     <!-- FLOATING BUTTON MOBILE -->
     <div class="fixed lg:hidden z-50 right-4 bottom-4">
-      <div class="fixed z-50 right-4 bottom-4">
-        <button
-          id="floatingMenuBtn"
-          class="flex items-center gap-3 justify-center px-6 py-3 rounded-full bg-white/20 border-y border-white backdrop-blur-xs shadow-lg transition-colors duration-300"
-        >
-          <span
-            id="menuText"
-            class="text-white md:text-xl transition-colors duration-300"
-          >
-            Menu
-          </span>
-          <svg
-            id="menuIcon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-          >
-            <defs>
-              <linearGradient
-                id="menuGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="0%"
+      <!-- dropdown menu, defaultnya hidden, nempel di ATAS button -->
+      <div
+        id="floatingMenuDropdown"
+        class="hidden absolute bottom-full right-0 mb-3 w-56 justify-items-center rounded-3xl bg-white/70 backdrop-blur-xl shadow-xl border border-white overflow-hidden"
+      >
+        <ul class="flex flex-col justify-between items-start">
+          <li>
+            <a
+              href="#desktop"
+              data-target="desktop"
+              class="nav-link flex text-center gap-3 items-center px-5 py-4 text-black hover:bg-black/5 transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-laptop"
+                viewBox="0 0 16 16"
               >
-                <stop offset="0%" stop-color="var(--color-merah)" />
-                <stop offset="100%" stop-color="var(--color-biru)" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-            />
-          </svg>
-        </button>
+                <path
+                  d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"
+                />
+              </svg>
+              Desktop
+            </a>
+          </li>
+          <li>
+            <a
+              href="#mobile"
+              data-target="mobile"
+              class="nav-link flex text-center gap-3 items-center px-5 py-4 text-black hover:bg-black/5 transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-phone"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                />
+                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+              </svg>
+              Mobile
+            </a>
+          </li>
+          <li>
+            <a
+              href="#article"
+              data-target="article"
+              class="nav-link flex text-center gap-3 items-center px-5 py-4 text-black hover:bg-black/5 transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-card-text"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"
+                />
+                <path
+                  d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"
+                />
+              </svg>
+              Article
+            </a>
+          </li>
+          <li>
+            <a
+              href="#widget"
+              data-target="widget"
+              class="nav-link flex text-center gap-3 items-center px-5 py-4 text-black hover:bg-black/5 transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-layout-sidebar"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2z"
+                />
+              </svg>
+              Widget
+            </a>
+          </li>
+          <li>
+            <a
+              href="#custom"
+              data-target="custom"
+              class="nav-link flex text-center gap-3 items-center px-5 py-4 text-black hover:bg-black/5 transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-grid-1x2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6 1H1v14h5zm9 0h-5v5h5zm0 9v5h-5v-5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1z"
+                />
+              </svg>
+              Custom
+            </a>
+          </li>
+          <li>
+            <a
+              href="#vob"
+              data-target="vob"
+              class="nav-link flex text-center gap-3 items-center px-5 py-4 text-black hover:bg-black/5 transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-play-btn"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"
+                />
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"
+                />
+              </svg>
+              VOB
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <button
+        id="floatingMenuBtn"
+        class="relative flex items-center gap-3 justify-center px-6 py-3 rounded-full bg-white/20 border-y border-white backdrop-blur-xs shadow-lg transition-colors duration-300"
+      >
+        <span
+          id="menuText"
+          class="text-black md:text-xl transition-colors duration-300"
+        >
+          Menu
+        </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          fill="black"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill="black"
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+      </button>
     </div>
 
     <!-- FOOTER -->
@@ -1818,6 +1280,7 @@
     <!-- SCRIPT MENU -->
     <script>
       const navWrapper = document.getElementById("navWrapper");
+      const navPlaceholder = document.getElementById("navPlaceholder");
       const navGroup = document.getElementById("navGroup");
       const navList = document.getElementById("navList");
       const searchBtn = document.getElementById("searchBtn");
@@ -1830,9 +1293,13 @@
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > navOffset) {
+          if (!navWrapper.classList.contains("fixed")) {
+            navPlaceholder.style.height = navWrapper.offsetHeight + "px";
+          }
+
           navWrapper.classList.add(
             "fixed",
-            "top-11",
+            "top-21",
             "left-0",
             "right-0",
             "z-50",
@@ -1854,11 +1321,12 @@
         } else {
           navWrapper.classList.remove(
             "fixed",
-            "top-11",
+            "top-21",
             "left-0",
             "right-0",
             "z-50",
           );
+          navPlaceholder.style.height = "0px";
 
           navList.classList.remove(
             "bg-white/70",
@@ -1873,7 +1341,6 @@
           logoPutih.classList.remove("hidden");
           logoColor.classList.add("hidden");
 
-          // searchBtn ikut hidden -> dropdown-nya juga harus ditutup
           searchDropdown.classList.add("hidden");
         }
       });
@@ -2019,47 +1486,17 @@
     <!-- SCRIPT FLOATING BUTTON -->
     <script>
       const floatingMenuBtn = document.getElementById("floatingMenuBtn");
-      const menuText = document.getElementById("menuText");
-      const menuIcon = document.getElementById("menuIcon");
       const desktopSection = document.getElementById("desktop");
+      const floatingMenuDropdown = document.getElementById(
+        "floatingMenuDropdown",
+      );
 
       const desktopObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // masuk section desktop → bg putih solid, teks & icon gradasi
               floatingMenuBtn.classList.remove("bg-white/20");
               floatingMenuBtn.classList.add("bg-white/70");
-
-              menuText.classList.remove("text-white");
-              menuText.classList.add(
-                "bg-gradient-to-r",
-                "from-merah",
-                "to-biru",
-                "bg-clip-text",
-                "text-transparent",
-              );
-
-              menuIcon
-                .querySelector("path")
-                .setAttribute("fill", "url(#menuGradient)");
-            } else {
-              // masih di hero → bg transparan, teks & icon putih
-              floatingMenuBtn.classList.remove("bg-white/70");
-              floatingMenuBtn.classList.add("bg-white/20");
-
-              menuText.classList.remove(
-                "bg-gradient-to-r",
-                "from-merah",
-                "to-biru",
-                "bg-clip-text",
-                "text-transparent",
-              );
-              menuText.classList.add("text-white");
-
-              menuIcon
-                .querySelector("path")
-                .setAttribute("fill", "currentColor");
             }
           });
         },
@@ -2067,6 +1504,111 @@
       );
 
       desktopObserver.observe(desktopSection);
+
+      // dropdown floating menu
+      floatingMenuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        floatingMenuDropdown.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !floatingMenuDropdown.classList.contains("hidden") &&
+          !floatingMenuDropdown.contains(e.target) &&
+          !floatingMenuBtn.contains(e.target)
+        ) {
+          floatingMenuDropdown.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <script>
+      const searchInputEl = document.getElementById("searchWrapperbg");
+      const searchScrollInput = document.getElementById("searchScrollInput");
+      const searchMobileInput = document.getElementById("searchMobileInput");
+      const cards = document.querySelectorAll(".product-card");
+
+      function filterCards(keyword) {
+        keyword = keyword.trim().toLowerCase();
+        let firstMatch = null;
+
+        cards.forEach((card) => {
+          const title =
+            card.querySelector("h2")?.textContent.toLowerCase() || "";
+          const isMatch = title.includes(keyword);
+
+          if (isMatch) {
+            card.classList.remove("hidden");
+            if (!firstMatch) firstMatch = card;
+          } else {
+            card.classList.add("hidden");
+          }
+
+          card.classList.remove("highlight-animate");
+        });
+
+        if (keyword && firstMatch) {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  void firstMatch.offsetWidth;
+                  firstMatch.classList.add("highlight-animate");
+                  obs.disconnect();
+                }
+              });
+            },
+            { threshold: 0.6 },
+          );
+
+          observer.observe(firstMatch);
+          firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+
+      function showAllCards() {
+        cards.forEach((card) => {
+          card.classList.remove("hidden");
+          card.classList.remove("highlight-animate");
+        });
+      }
+
+      // search di hero (desktop)
+      searchSubmitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        filterCards(searchInputEl.value);
+      });
+
+      searchInputEl.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          filterCards(searchInputEl.value);
+        }
+      });
+
+      // sinkron ke input mobile tiap kali diketik di hero
+      searchInputEl.addEventListener("input", () => {
+        searchScrollInput.value = searchInputEl.value;
+        if (searchInputEl.value.trim() === "") {
+          showAllCards();
+        }
+      });
+
+      // search di dropdown (mobile/nav)
+      searchScrollInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          filterCards(searchScrollInput.value);
+        }
+      });
+
+      // sinkron ke input hero tiap kali diketik di mobile
+      searchScrollInput.addEventListener("input", () => {
+        searchInputEl.value = searchScrollInput.value;
+        if (searchScrollInput.value.trim() === "") {
+          showAllCards();
+        }
+      });
     </script>
   </body>
 </html>

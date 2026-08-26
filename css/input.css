@@ -44,3 +44,22 @@
     fill: #4a3300;
     dominant-baseline: middle;
   }
+
+  @keyframes highlightPulse {
+  0% {
+    transform: translateY(0px);
+    box-shadow: none;
+  }
+  50% {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.highlight-animate {
+  animation: highlightPulse 0.8s ease-out;
+}
