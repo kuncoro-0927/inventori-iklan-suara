@@ -6,6 +6,9 @@
     --font-sans: "Sora", sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-50: oklch(97.1% 0.013 17.38);
+    --color-red-100: oklch(93.6% 0.032 17.717);
+    --color-amber-100: oklch(96.2% 0.059 95.617);
     --color-green-50: oklch(98.2% 0.018 155.826);
     --color-green-500: oklch(72.3% 0.219 149.579);
     --color-neutral-900: oklch(20.5% 0 none);
@@ -248,6 +251,15 @@
   .left-0 {
     left: 0px;
   }
+  .left-1 {
+    left: var(--spacing);
+  }
+  .left-1\/2 {
+    left: calc(1 / 2 * 100%);
+  }
+  .left-10 {
+    left: calc(var(--spacing) * 10);
+  }
   .left-\[16px\] {
     left: 16px;
   }
@@ -411,6 +423,9 @@
   .justify-items-center {
     justify-items: center;
   }
+  .gap-1 {
+    gap: var(--spacing);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -477,11 +492,20 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .bg-amber-100 {
+    background-color: var(--color-amber-100);
+  }
   .bg-green-50 {
     background-color: var(--color-green-50);
   }
   .bg-green-500 {
     background-color: var(--color-green-500);
+  }
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
+  .bg-red-100 {
+    background-color: var(--color-red-100);
   }
   .bg-transparent {
     background-color: transparent;
