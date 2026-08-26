@@ -1858,6 +1858,11 @@
           </div>
         </div>
       </section>
+      <div id="noResultsMessage" class="hidden relative text-center py-24 px-4">
+        <p class="text-lg md:text-2xl font-medium">
+          Pencarian anda tidak ditemukan
+        </p>
+      </div>
     </main>
 
     <!-- FLOATING BUTTON MOBILE -->
@@ -2329,10 +2334,19 @@
       const searchScrollInput = document.getElementById("searchScrollInput");
       const searchMobileInput = document.getElementById("searchMobileInput");
       const cards = document.querySelectorAll(".product-card");
+      const noResultsMessage = document.getElementById("noResultsMessage");
+
+      // Section produk = section yang punya .product-card di dalamnya
+      // (otomatis kepake buat section Desktop, Mobile, Article, Widget, Custom, VOB
+      // begitu section-section itu dibuat, gak perlu hardcode id satu-satu)
+      const productSections = Array.from(
+        document.querySelectorAll("main section[id]"),
+      ).filter((section) => section.querySelector(".product-card"));
 
       function filterCards(keyword) {
         keyword = keyword.trim().toLowerCase();
         let firstMatch = null;
+        let matchCount = 0;
 
         cards.forEach((card) => {
           const title =
@@ -2342,12 +2356,22 @@
           if (isMatch) {
             card.classList.remove("hidden");
             if (!firstMatch) firstMatch = card;
+            matchCount++;
           } else {
             card.classList.add("hidden");
           }
 
           card.classList.remove("highlight-animate");
         });
+
+        const isEmptyResult = keyword !== "" && matchCount === 0;
+
+        // Sembunyiin semua section produk (Desktop s/d VOB) + tampilin pesan
+        // kalau hasil pencarian kosong; sebaliknya tampilin lagi section-nya.
+        productSections.forEach((section) => {
+          section.classList.toggle("hidden", isEmptyResult);
+        });
+        noResultsMessage.classList.toggle("hidden", !isEmptyResult);
 
         if (keyword && firstMatch) {
           const observer = new IntersectionObserver(
@@ -2373,6 +2397,10 @@
           card.classList.remove("hidden");
           card.classList.remove("highlight-animate");
         });
+        productSections.forEach((section) => {
+          section.classList.remove("hidden");
+        });
+        noResultsMessage.classList.add("hidden");
       }
 
       // search di hero (desktop)
