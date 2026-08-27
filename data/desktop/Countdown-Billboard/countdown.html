@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>970x250</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        width: 970px;
+        height: 250px;
+        overflow: hidden;
+        margin: 0px auto;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .tcd {
+        width: 970px;
+        height: 250px;
+        background: #211a75;
+        position: relative;
+      }
+
+      .tcd__main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+      }
+
+      .tcd__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      #countdown {
+        color: #ffffff;
+        list-style: none;
+        z-index: 2;
+        margin-bottom: 40px;
+      }
+
+      li {
+        display: inline-block;
+        list-style-type: none;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      li span {
+        display: block;
+        color: #3a36f7;
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: -17px;
+      }
+
+      .tcd__box {
+        background: #ffffff;
+        text-align: center;
+        width: 70px;
+        margin: 0px 12px;
+        padding: 0px 8px;
+        border-radius: 5px;
+        padding-bottom: 5px;
+      }
+
+      .count {
+        width: 50%;
+      }
+
+      .banner {
+        width: 50%;
+      }
+
+      .tcd a {
+        z-index: 2;
+        text-decoration: none;
+      }
+
+      .tcd__cta {
+        background: #9a25e6;
+        color: #ffffff;
+        width: 225px;
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0px auto;
+        font-weight: 500;
+        padding: 7px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .tcd__cta:hover {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+      }
+
+      #content {
+        display: none;
+      }
+
+      #slide_in {
+        -webkit-animation: slide-in 1s ease 0s;
+        -moz-animation: slide-in 1s ease 0s;
+        animation: slide-in 1s ease 0s;
+      }
+
+      @-webkit-keyframes slide-in {
+        0% {
+          opacity: 0;
+          -webkit-transform: translateX(200%);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: translateX(0px);
+        }
+      }
+
+      @-moz-keyframes slide-in {
+        0% {
+          opacity: 0;
+          -moz-transform: translateX(200%);
+        }
+        100% {
+          opacity: 1;
+          -moz-transform: translateX(0px);
+        }
+      }
+
+      .drop_in {
+        -webkit-animation: drop-in 1s ease 0s normal;
+        -moz-animation: drop-in 1s ease 0s normal;
+        animation: drop-in 1s ease 0s normal;
+      }
+
+      @-webkit-keyframes drop-in {
+        0% {
+          opacity: 0;
+          -webkit-transform: translateY(-100%);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: translateY(0px);
+        }
+      }
+
+      @-moz-keyframes drop-in {
+        0% {
+          opacity: 0;
+          -moz-transform: translateY(-100%);
+        }
+        100% {
+          opacity: 1;
+          -moz-transform: translateY(0px);
+        }
+      }
+
+      .shine {
+        background:
+          -webkit-linear-gradient(
+              right bottom,
+              rgba(255, 255, 255, 0) 30%,
+              rgba(255, 255, 255, 0.4) 45%,
+              white 50%,
+              rgba(255, 255, 255, 0.4) 55%,
+              rgba(255, 255, 255, 0) 70%
+            )
+            no-repeat,
+          #9a25e6;
+        background:
+          -moz-linear-gradient(
+              right bottom,
+              rgba(255, 255, 255, 0) 30%,
+              rgba(255, 255, 255, 0.4) 45%,
+              white 50%,
+              rgba(255, 255, 255, 0.4) 55%,
+              rgba(255, 255, 255, 0) 70%
+            )
+            no-repeat,
+          #9a25e6;
+        -webkit-background-size: 500% 300%;
+        -moz-background-size: 500% 300%;
+        background-size: 500% 300%;
+        -webkit-animation-name: inner-glow, shine;
+        -moz-animation-name: inner-glow, shine;
+        animation-name: inner-glow, shine;
+        -webkit-animation-duration: 0.5s, 3s;
+        -moz-animation-duration: 0.5s, 3s;
+        animation-duration: 0.5s, 3s;
+        -webkit-animation-timing-function: ease-in, ease;
+        -moz-animation-timing-function: ease-in, ease;
+        animation-timing-function: ease-in, ease;
+        -webkit-animation-delay: 0s, 0s;
+        -moz-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s;
+        -webkit-animation-iteration-count: infinite, infinite;
+        -moz-animation-iteration-count: infinite, infinite;
+        animation-iteration-count: infinite, infinite;
+        -webkit-animation-direction: alternate, normal;
+        -moz-animation-direction: alternate, normal;
+        animation-direction: alternate, normal;
+      }
+
+      @-webkit-keyframes shine {
+        0% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      @-moz-keyframes shine {
+        0% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tcd">
+      <div class="tcd tcd__main">
+        <div class="banner">
+          <img src="assets/images/bg.png" />
+        </div>
+        <div class="count drop_in">
+          <ul id="countdown" class="">
+            <li class="tcd__box"><span id="days">0</span>HARI</li>
+            <li class="tcd__box"><span id="hour">11</span>JAM</li>
+            <li class="tcd__box"><span id="min">43</span>MENIT</li>
+            <li class="tcd__box"><span id="sec">58</span>DETIK</li>
+          </ul>
+          <a href="https://example.com" target="blank">
+            <div class="tcd__cta shine">BELANJA SEKARANG</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let d = document.getElementById("days");
+      let h = document.getElementById("hour");
+      let m = document.getElementById("min");
+      let s = document.getElementById("sec");
+
+      // Target countdown
+      let count = new Date("2026-12-12T23:39:00").getTime();
+
+      let x = setInterval(function () {
+        let now = new Date().getTime();
+        let D = count - now;
+
+        if (D <= 0) {
+          clearInterval(x);
+
+          d.innerHTML = "00";
+          h.innerHTML = "00";
+          m.innerHTML = "00";
+          s.innerHTML = "00";
+
+          return;
+        }
+
+        let days = Math.floor(D / (1000 * 60 * 60 * 24));
+        let hour = Math.floor((D % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let min = Math.floor((D % (1000 * 60 * 60)) / (1000 * 60));
+        let sec = Math.floor((D % (1000 * 60)) / 1000);
+
+        d.innerHTML = String(days).padStart(2, "0");
+        h.innerHTML = String(hour).padStart(2, "0");
+        m.innerHTML = String(min).padStart(2, "0");
+        s.innerHTML = String(sec).padStart(2, "0");
+      }, 1000);
+    </script>
+  </body>
+</html>

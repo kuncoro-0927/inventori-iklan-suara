@@ -1,0 +1,243 @@
+<script type="text/javascript">
+  /** Please Note: Make sure your banner is in either JPG, PNG or GIF format. **/
+  var dfp_widthMateri = 300; //define in template
+  var dfp_heightMateri = 250; //define in template
+  var dfp_clickThrough = "http://www.google.co.id"; //define in template
+  var dfp_thirdPartyImpression = ""; //define in template
+  var widthCont = dfp_widthMateri + 10;
+  var heightCont = dfp_heightMateri + 15;
+  var bottomClose = dfp_heightMateri + 30;
+  var heightClick = dfp_heightMateri - 20;
+
+  var balloonAd_style =
+    "\
+    #dfp-container-rollup { \
+        width: " +
+    widthCont +
+    "px; \
+        height: 0px; \
+    } \
+    #dfp-container-rollup.container { \
+        width: " +
+    widthCont +
+    "px; \
+        height: " +
+    heightCont +
+    "px; \
+        position:fixed; \
+        bottom: 50px; \
+        background-color: transparent; \
+    } \
+    #dfp-appear { \
+        width: " +
+    dfp_widthMateri +
+    "px; \
+        height: 0px; \
+        overflow:hidden; \
+        -webkit-transition: height 0.4s linear; \
+        -moz-transition: height 0.4s linear; \
+        -o-transition: height 0.4s linear; \
+        transition: height 0.4s linear; \
+        position:fixed; \
+        left:0; \
+        bottom:0; \
+    } \
+    #dfp-appear.rollup { \
+        height: " +
+    dfp_heightMateri +
+    "px; \
+        z-index: 99; \
+    } \
+    .container.rollup { \
+        z-index: 9999; \
+    } \
+    #dfp-close-rollup { \
+        bottom: 0px; \
+        width: 33px; \
+        height: 0px; \
+        position: fixed; \
+        -webkit-transition: bottom 0.4s linear; \
+        -moz-transition: bottom 0.4s linear; \
+        -o-transition: bottom 0.4s linear; \
+        transition: bottom 0.4s linear; \
+    } \
+    #dfp-close-rollup.rollup { \
+        height: 33px; \
+        bottom: " +
+    bottomClose +
+    "px; \
+        z-index: 99999; \
+    } \
+    ";
+
+  var balloonAd_template =
+    ' \
+\
+<div id="dfp-container-rollup"> \
+    <div id="dfp-appear"> \
+        <img src="https://iklan.tribunnews.com/preview/desktop/baloonads/300x250.gif" /> \
+        <a id="dfp-link-rollup" href="' +
+    dfp_clickThrough +
+    '" target="_blank" style="width: ' +
+    dfp_widthMateri +
+    "px; height: " +
+    heightClick +
+    'px; bottom:50px; position: fixed;"></a> \
+    </div> \
+    <div id="dfp-close-rollup" style= "cursor: pointer"> \
+            <img id="dfp-img-close-rollup" style="width: 33px; height: 33px;" alt="" src="assets/images/close.png"> \
+    </div> \
+    <div id="dfp-beacon-rollup-%%CACHEBUSTER%%" class="dfp-beacon-rollup"> \
+        <img id="dfp-img-beacon-rollup1" src="" width="0" border="0" height="0" style="display:none; visibility:hidden;"> \
+        <img id="dfp-img-beacon-rollup2" src="" width="0" border="0" height="0" style="display:none; visibility:hidden;"> \
+    </div> \
+</div> \
+    ';
+
+  var balloonAd_script =
+    '\
+    /** Prepare element for roll up banner effect **/ \
+    var dfp_rollup_contEffect = document.getElementById("dfp-container-rollup"); \
+    var dfp_rollup_appear = document.getElementById("dfp-appear"); \
+    var dfp_close_rollup = document.getElementById("dfp-close-rollup"); \
+    var dfp_img_close_rollup = document.getElementById("dfp-img-close-rollup"); \
+    var dfp_link_rollup = document.getElementById("dfp-link-rollup"); \
+    var wScreen = window.parent.innerWidth || window.parent.document.documentElement.clientWidth|| window.parent.document.body.clientWidth; \
+    \
+    var dfp_appearFrom = "right"; /* define in template */ \
+    var timerToRollup; /** timer for rollup **/ \
+    var fired = false; \
+    clearTimeout(timerToRollup); \
+    window.addEventListener("scroll", function(){  \
+        /** Get the top position value  of body in client browser **/ \
+        var dfp_scrollTop =  document.documentElement.scrollTop ||  document.body.scrollTop ||  window.pageYOffset; \
+        /* console.log("body Android/ Desktop = "+document.documentElement.scrollTop); */ /* for Android/Desktop */ \
+        /* console.log("body Safari Desktop = "+document.body.scrollTop); */ /* for Safari Desktop */ \
+        /* console.log("body Safari Mobile = "+window.pageYOffset); */ /* for Safari Mobile */ \
+        \
+        if (dfp_scrollTop > 500 && fired === false){  \
+                /* console.log("scroll = "+dfp_scrollTop); */ \
+                /** Add class to appear the rollup banner **/ \
+                dfp_rollup_contEffect.classList.add("container"); \
+                dfp_rollup_contEffect.classList.add("rollup"); \
+                dfp_rollup_appear.classList.add("rollup"); \
+                dfp_close_rollup.classList.add("rollup"); \
+                \
+                /** Get position of rollup banner **/ \
+                if(dfp_appearFrom == "left"){ /* appear from Left side */ \
+                    dfp_rollup_contEffect.style.left = "0px"; \
+                    dfp_rollup_appear.style.position = "absolute"; \
+                    dfp_rollup_appear.style.left = "0px"; \
+                    dfp_link_rollup.style.left = "0px"; \
+                    var newPosClose = ' +
+    dfp_widthMateri +
+    ' - 26; \
+                    dfp_close_rollup.style.left = newPosClose+"px"; \
+                } \
+                else { /* appear from Right side */ \
+                    dfp_rollup_contEffect.style.right = "0px"; \
+                    dfp_rollup_appear.style.position = "absolute"; \
+                    dfp_rollup_appear.style.right = "0px"; \
+                    dfp_rollup_appear.style.left = "10px"; \
+                    dfp_link_rollup.style.right = "0px"; \
+                    var newPosClose = ' +
+    dfp_widthMateri +
+    ' - 26; \
+                    dfp_close_rollup.style.right = newPosClose+"px"; \
+                } \
+                \
+                /** Counting impression when the banner is visible **/ \
+                if(dfp_rollup_contEffect.classList.contains("rollup")){ \
+                    var dfp_beacon_rollup = document.querySelector(".dfp-beacon-rollup #dfp-img-beacon-rollup1"); \
+                    dfp_beacon_rollup.src = "https://cdn-3.tstatic.net/ads/tes/closebutton/closeblack.png"; \
+                    \
+                    var dfp_beacon_rollup = document.querySelector(".dfp-beacon-rollup #dfp-img-beacon-rollup2"); \
+                    dfp_beacon_rollup.src = "' +
+    dfp_thirdPartyImpression +
+    '"; \
+                    \
+                    /** Remove banner when ... seconds left **/ \
+                    timerToRollup = setTimeout(function(){  \
+                        /* var removeRollupEl = document.getElementById("dfp-container-rollup"); */ \
+                        /* removeRollupEl.parentNode.removeChild(removeRollupEl); */ \
+                        dfp_rollup_contEffect.style.height = "0px"; \
+                        dfp_rollup_appear.style.height = "0px"; \
+                        dfp_close_rollup.style.bottom = "0px"; \
+                        dfp_close_rollup.style.visibility = "hidden"; \
+                        \
+                        /** Remove div element when banner is already hidden **/ \
+                        fired = true; \
+                        removeElRollup(); \
+                    },12000); \
+                    /* console.log("setiTime roll finish : "+timerToRollup); */ \
+                } \
+        } \
+    /* }); */ \
+    }, true); \
+    \
+    \
+    /** Roll down the banner when user click/tap the close button **/ \
+    var theElement = document.getElementById("dfp-close-rollup"); \
+    theElement.addEventListener("mouseup", rollDown, false); \
+    theElement.addEventListener("touchend", rollDown, false); \
+    \
+    \
+    function rollDown(event) { \
+        clearTimeout(timerToRollup); \
+        /* console.log("timer to rollup = "+timerToRollup); */ \
+        /** Give roll down effect when close button is clicked **/ \
+        dfp_rollup_contEffect.style.height = "0px"; \
+        dfp_rollup_appear.style.height = "0px"; \
+        dfp_close_rollup.style.bottom = "0px"; \
+        dfp_close_rollup.style.visibility = "hidden"; \
+        \
+        removeElRollup(); \
+        event.preventDefault(); \
+        return false; \
+    } \
+    \
+    function removeElRollup(){ \
+        /** Remove div element when banner is already hidden **/ \
+        if(dfp_close_rollup.style.visibility == "hidden"){ \
+            var removeRollupEl = document.getElementById("dfp-container-rollup"); \
+            setTimeout(function(){ \
+               /* removeRollupEl.parentNode.removeChild(removeRollupEl); */ \
+               removeRollupEl.style.display = "none"; \
+            },3000); \
+        } \
+    } \
+    \
+';
+
+  var iframeEl = window.frameElement;
+
+  //get frame parent
+  var iframeParentEl = iframeEl.parentElement;
+
+  /** For style element **/
+  //create rollup banner element to containing rollup banner template
+  var styleTopframe = document.createElement("style");
+  styleTopframe.innerHTML = balloonAd_style;
+
+  //add rollup banner style element to parent frame
+  iframeParentEl.appendChild(styleTopframe);
+
+  /** For template element **/
+  var containerEl = document.createElement("div");
+  containerEl.innerHTML = balloonAd_template;
+  iframeParentEl.appendChild(containerEl);
+
+  /** For script element **/
+  //create container for rollup banner script
+  var containerScript = document.createElement("script");
+  containerScript.setAttribute("type", "text/javascript");
+
+  //assign script to script container, note in firefox innerText is not available so use textContent instead
+  if (typeof containerScript.innerText == "undefined") {
+    containerScript.textContent = balloonAd_script;
+  } else {
+    containerScript.innerText = balloonAd_script;
+  }
+  //add rollup banner script container to rollup banner element
+  containerEl.appendChild(containerScript);
+</script>

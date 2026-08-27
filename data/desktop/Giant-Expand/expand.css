@@ -1,0 +1,19 @@
+.ads__side {
+  overflow: inherit !important;
+  /*padding: 0px 20px !important;*/
+  background: none !important;
+}
+
+.giant_expand {
+  width: 300px !important;
+  height: 600px !important;
+  clear: both !important;
+  position: relative !important;
+}
+.giant_expand iframe:hover {
+  width: 1150px !important;
+}
+.navhl,
+.navhl2 {
+  z-index: 0 !important;
+}

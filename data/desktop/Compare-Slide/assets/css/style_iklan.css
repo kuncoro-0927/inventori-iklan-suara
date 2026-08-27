@@ -1,0 +1,137 @@
+body,
+html {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+  padding: 0;
+  font-family:
+    Open Sans,
+    sans-serif;
+}
+
+/* â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“Linksâ€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“*/
+a {
+  transition: all 250ms ease;
+  color: #171717;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/*widget*/
+.container-widget {
+  width: 970px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+.img {
+  position: absolute;
+  z-index: 1;
+}
+.img1 {
+  left: 20px;
+  top: 20px;
+}
+.img2 {
+  right: 20px;
+  top: 20px;
+}
+.img3 {
+  bottom: 0;
+  left: 20px;
+}
+
+.js-slider-last-container::before {
+  background-color: #d71a21 !important;
+  width: 0 !important;
+}
+.js-slider-last-container {
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.scrub-slider {
+  height: 250px !important;
+}
+.sliding-left,
+.sliding-right {
+  display: none;
+}
+.scrub-slider .sliding.handleOn::before {
+  background: url(/assets/images/label.png) no-repeat center center;
+  width: 250px;
+  padding-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  z-index: 2;
+  height: 70px;
+  /* transform: translate(-55px, -40px); */
+}
+.sliding.handleOn {
+  bottom: 0%;
+}
+.sliding.handleOn.centerpesawat {
+  bottom: 25%;
+}
+.sliding.handleOn.centerpesawat {
+}
+.scrub-slider .sliding {
+  background: none;
+}
+.scrub-right {
+}
+
+@-webkit-keyframes scan_updown {
+  0% {
+    transform: translate(-60px, -30px);
+  }
+  50% {
+    transform: translate(-40px, -35px);
+  }
+  100% {
+    transform: translate(-60px, -30px);
+  }
+}
+@-moz-keyframes scan_updown {
+  0% {
+    transform: translate(-60px, -30px);
+  }
+  50% {
+    transform: translate(-40px, -35px);
+  }
+  100% {
+    transform: translate(-60px, -30px);
+  }
+}
+@-o-keyframes scan_updown {
+  0% {
+    transform: translate(-60px, -30px);
+  }
+  50% {
+    transform: translate(-40px, -35px);
+  }
+  100% {
+    transform: translate(-60px, -30px);
+  }
+}
+@keyframes scan_updown {
+  0% {
+    transform: translate(-60px, -30px);
+  }
+  50% {
+    transform: translate(-40px, -35px);
+  }
+  100% {
+    transform: translate(-60px, -30px);
+  }
+}

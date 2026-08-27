@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suara.com</title>
+    <link rel="stylesheet" href="assets/css/style-1.0.1.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="assets/images/icon/logo.svg"
+              alt="Logo Suara"
+              width="237"
+              height="25"
+            />
+          </a>
+        </div>
+
+        <div class="search">
+          <input type="text" placeholder="Cari..." />
+        </div>
+
+        <div class="account">
+          <button type="button" id="account-btn">
+            <img src="assets/images/icon/user-white.svg" alt="User Icon" />
+          </button>
+
+          <div class="account-popup" id="account-popup">
+            <div class="info-account">
+              <img src="assets/images/icon/user-white.svg" alt="User Profile" />
+            </div>
+            <ul>
+              <li class="send-writers"><a href="#">Kirim Tulisan</a></li>
+              <li><a href="#">Notifikasi</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- HAMBURGER -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Toggle Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- OVERLAY -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- MENU SLIDE -->
+        <div class="slide-menu" id="menu">
+          <div class="menu-header">
+            <button class="close-btn" id="closeBtn" type="button">✕</button>
+          </div>
+          <ul class="menu-list">
+            <li>
+              <a href="profile.html" class="user"
+                ><img src="assets/images/icon/menu-user.svg" alt="User Profile"
+              /></a>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img src="assets/images/icon/menu-news.svg" alt="News Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >News</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Nasional</a>
+                <a href="kanal.html">Metropolitan</a>
+                <a href="kanal.html">Internasional</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-bisnis.svg"
+                    alt="Bisnis Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Bisnis</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Makro</a>
+                <a href="kanal.html">Asuransi</a>
+                <a href="kanal.html">Keuangan</a>
+                <a href="kanal.html">Properti</a>
+                <a href="kanal.html">Inspiratif</a>
+                <a href="kanal.html">Ekopol</a>
+                <a href="kanal.html">Energi</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img src="assets/images/icon/menu-bola.svg" alt="Bola Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Bola</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Bola Indonesia</a>
+                <a href="kanal.html">Liga Inggris</a>
+                <a href="kanal.html">Liga Italia</a>
+                <a href="kanal.html">Bola Dunia</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-sport.svg"
+                    alt="Sport Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Sport</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Raket</a>
+                <a href="kanal.html">Balap</a>
+                <a href="kanal.html">Arena</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-lifestyle.svg"
+                    alt="Lifestyle Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Lifestyle</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Female</a>
+                <a href="kanal.html">Male</a>
+                <a href="kanal.html">Relationship</a>
+                <a href="kanal.html">Food & Travel</a>
+                <a href="kanal.html">Komunitas</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-entertainment.svg"
+                    alt="Entertainment Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Entertainment</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Gosip</a>
+                <a href="kanal.html">Music</a>
+                <a href="kanal.html">Film</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-otomotif.svg"
+                    alt="Otomotif Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Otomotif</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Mobil</a>
+                <a href="kanal.html">Motor</a>
+                <a href="kanal.html">Autoseleb</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-tekno.svg"
+                    alt="Tekno Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Tekno</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Internet</a>
+                <a href="kanal.html">Gadget</a>
+                <a href="kanal.html">Tekno</a>
+                <a href="kanal.html">Sains</a>
+                <a href="kanal.html">Game</a>
+              </div>
+            </li>
+
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-healt.svg"
+                    alt="Health Icon"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                  >Health</a
+                >
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Women</a>
+                <a href="kanal.html">Men</a>
+                <a href="kanal.html">Parenting</a>
+                <a href="kanal.html">Konsultasi</a>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-link">
+                <i><img src="assets/images/icon/menu-foto.svg" alt="Foto" /></i
+                ><a href="kanal.html">Foto</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-video.svg"
+                    alt="Video" /></i
+                ><a href="kanal.html">Video</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-opini.svg"
+                    alt="Opini" /></i
+                ><a href="kanal.html">Opini</a>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="regional mt-20">
+            <li class="title">
+              <a href="regional.html">Regional</a>
+            </li>
+            <li><a href="kanal.html">Jakarta</a></li>
+            <li><a href="kanal.html">Jabar</a></li>
+            <li><a href="kanal.html">Jatim</a></li>
+            <li><a href="kanal.html">Jateng</a></li>
+            <li><a href="kanal.html">Sumut</a></li>
+            <li><a href="kanal.html">Banten</a></li>
+            <li><a href="kanal.html">Sulsel</a></li>
+            <li><a href="kanal.html">Bali</a></li>
+            <li><a href="kanal.html">Sumsel</a></li>
+            <li><a href="kanal.html">Jogja</a></li>
+            <li><a href="kanal.html">Riau</a></li>
+            <li><a href="kanal.html">Lampung</a></li>
+            <li><a href="kanal.html">Kaltim</a></li>
+            <li><a href="kanal.html">Kalbar</a></li>
+            <li><a href="kanal.html">Sumbar</a></li>
+            <li><a href="kanal.html">Bogor</a></li>
+            <li><a href="kanal.html">Bekasi</a></li>
+            <li><a href="kanal.html">Malang</a></li>
+            <li><a href="kanal.html">Surakarta</a></li>
+          </ul>
+
+          <div class="menu-bottom">
+            <p>Available On</p>
+            <div class="menu-store">
+              <div>
+                <img
+                  src="assets/images/icon/playstore.svg"
+                  alt="Google Play Store"
+                />
+              </div>
+              <div>
+                <img src="assets/images/icon/iosstore.svg" alt="App Store" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-scroll">
+      <div class="container">
+        <div class="menu-wrapper">
+          <a href="index.html">Home</a>
+          <a href="kanal.html">Nasional</a>
+          <a href="kanal.html">Ekonomi</a>
+          <a href="kanal.html">Bola</a>
+          <a href="kanal.html">Otomotif</a>
+          <a href="kanal.html">Entertainment</a>
+          <a href="#">Tekno</a>
+          <a href="#">Gaya Hidup</a>
+          <a href="#">Sport</a>
+          <a href="#">Indeks</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-menu-bottom">
+      <div class="container">
+        <ul>
+          <li>
+            <a href="https://microsite.suara.com/umkm" target="_blank">
+              <img
+                src="assets/images/icon/bri.svg"
+                alt="BRI Logo"
+                width="55"
+                height="29"
+              />
+            </a>
+            <a href="https://microsite.suara.com/umkm" target="_blank">
+              <img
+                src="assets/images/icon/umkm.svg"
+                alt="UMKM Logo"
+                width="82"
+                height="25"
+              />
+            </a>
+            <a href="https://yoursay.suara.com/" target="_blank">
+              <img
+                src="assets/images/icon/yoursay.svg"
+                alt="Yoursay Logo"
+                width="73"
+                height="27"
+              />
+            </a>
+            <a href="https://nexuscreatorhub.com/" target="_blank">
+              <img
+                src="assets/images/icon/nexus.svg"
+                alt="Nexus Logo"
+                width="72"
+                height="18"
+              />
+            </a>
+            <a href="https://liks.suara.com/" target="_blank">
+              <img
+                src="assets/images/icon/liks.svg"
+                alt="Liks Logo"
+                width="42"
+                height="21"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="assets/images/icon/bullet.svg"
+                alt="Logo Suara"
+                width="15"
+                height="15"
+                class="mr-2"
+              />
+              Networks
+            </a>
+            <a href="#">
+              <img
+                src="assets/images/icon/bullet.svg"
+                alt="Logo Suara"
+                width="15"
+                height="15"
+                class="mr-2"
+              />
+              Cek Fakta
+            </a>
+            <a href="#">
+              <img
+                src="assets/images/icon/bullet.svg"
+                alt="Logo Suara"
+                width="15"
+                height="15"
+                class="mr-2"
+              />
+              Infografis
+            </a>
+            <a href="#"><b>JAKARTA</b></a>
+            <a href="#"><b>BOGOR</b></a>
+            <a href="#"><b>BEKASI</b></a>
+            <a href="#"><b>JABAR</b></a>
+
+            <div class="regional-wrap">
+              <a href="#" id="regional-btn" class="bg-gr"
+                >Regional <span class="arrow"></span
+              ></a>
+              <div class="regional-popup" id="regional-popup">
+                <div class="popup-content">
+                  <button type="button" class="close-popup" id="close-popup">
+                    &times;
+                  </button>
+                  <h3>Regional Daerah</h3>
+                  <ul>
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Jawa Barat</a></li>
+                    <li><a href="#">Jawa Tengah</a></li>
+                    <li><a href="#">Jawa Timur</a></li>
+                    <li><a href="#">Bali</a></li>
+                    <li><a href="#">Sumatera Utara</a></li>
+                    <li><a href="#">Kalimantan Selatan</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="trending-menu">
+      <div class="container">
+        <div class="trending-wrapper">
+          <div class="trending-header">
+            <img
+              src="assets/images/icon/trending.svg"
+              alt="Trending"
+              class="trending-icon"
+            />
+            <span class="trending-title">Trending</span>
+          </div>
+
+          <div class="trending-slider-container">
+            <button type="button" class="trending-prev">&#8249;</button>
+            <div class="trending-slider">
+              <div class="trending-item active">Bola</div>
+              <div class="trending-item">Tennis</div>
+              <div class="trending-item">Sepatu</div>
+              <div class="trending-item">Indonesia</div>
+              <div class="trending-item">Malaysia</div>
+              <div class="trending-item">Piala Dunia</div>
+              <div class="trending-item">Ekonomi</div>
+              <div class="trending-item">Tekno</div>
+              <div class="trending-item">Islam</div>
+              <div class="trending-item">Kristen</div>
+              <div class="trending-item">Budha</div>
+              <div class="trending-item">India</div>
+              <div class="trending-item">China</div>
+            </div>
+            <button type="button" class="trending-next">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div class="container">
+        <div class="breadcrumb mt-30">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Nasional</a></li>
+          </ul>
+        </div>
+        <div class="read">
+          <div class="detail-wrapper">
+            <!-- KIRI -->
+            <div class="detail-content">
+              <div class="article-image">
+                <h1>
+                  Industri Pangan dan Chef Profesional Dukung MBG memberikan
+                  pengalaman yang berguna untuk bangsa dan untuk masyarakat
+                </h1>
+                <h3 class="author-banner">
+                  Beni Sukadis | Konsultan senior di Marapi Consulting &amp;
+                  Advisory, Jakarta.
+                </h3>
+
+                <div class="article-profile">
+                  <img
+                    src="assets/images/news/news-6.jpg"
+                    class="user-profile"
+                    alt="Rohman Manawi"
+                  />
+                  <img
+                    src="assets/images/news/news-1.jpg"
+                    class="user-profile"
+                    alt="Rully"
+                  />
+                  <h3 class="author-trigger">
+                    <a href="#">Rohman Manawi</a>,
+                    <a href="#">Rully</a>
+                  </h3>
+
+                  <!-- Dropdown Author -->
+                  <div class="author-popup">
+                    <p><a href="profile.html">Rohman Manawi</a></p>
+                    <p><a href="profile.html">Rully</a></p>
+                  </div>
+
+                  <div class="share-article mt-20">
+                    <ul>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/share-fb.svg"
+                            alt="Share Facebook"
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/share-wa.svg"
+                            alt="Share WhatsApp"
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/share-x.svg"
+                            alt="Share X"
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/share-tele.svg"
+                            alt="Share Telegram"
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/share-link.svg"
+                            alt="Share Link"
+                        /></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <span>Senin, 24 November 2025 | 35 Menit</span>
+                <div style="display: none">
+                  <a
+                    class="google-follow-btn"
+                    rel="noopener"
+                    href="https://www.google.com/preferences/source?q=suara.com"
+                    target="_blank"
+                    aria-label="follow google"
+                  >
+                    <img
+                      src="https://assets.suara.com/suara/desktop/images/icon-sosmed/icon-google-color.svg"
+                      alt="Google News"
+                    />
+                    <span>Atur, Baru Temukan</span>
+                  </a>
+                </div>
+
+                <img
+                  class="mt-20"
+                  src="assets/images/news/news-2.jpg"
+                  alt="Berita"
+                />
+              </div>
+
+              <div class="article-content">
+                <div class="ten-second">
+                  <div class="thumb">
+                    <img
+                      src="https://assets.suara.com/suara/desktop/images/icon/second.png"
+                      width="90"
+                      height="90"
+                      alt="baca 10 detik"
+                    />
+                  </div>
+
+                  <ul>
+                    <li>
+                      <a href="#"
+                        >Direktur Utama LPDP, Sudarto, tegaskan beasiswa
+                        inklusif untuk menjaring talenta terbaik tanpa memandang
+                        status ekonomi keluarga.</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        >LPDP Targetkan Afirmasi Lebih dari 25% Tahun 2026</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Direktur Utama LPDP, Sudarto, tegaskan beasiswa
+                        inklusif untuk menjaring talenta terbaik tanpa memandang
+                        status ekonomi keluarga.</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literature
+                  from 45 BC, making it over 2000 years old. Richard McClintock,
+                  a Latin professor at Hampden-Sydney College in Virginia,
+                  looked up one of the more obscure Latin words, consectetur,
+                  from a Lorem Ipsum passage, and going through the cites of the
+                  word in classical literature, discovered the undoubtable
+                  source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
+                  "de Finibus Bonorum et Malorum" (The Extremes of Good and
+                  Evil) by Cicero, written in 45 BC. This book is a treatise on
+                  the theory of ethics, very popular during the Renaissance. The
+                  first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
+                  comes from a line in section 1.10.32.
+                </p>
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable. If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text. All the Lorem Ipsum
+                  generators on the Internet tend to repeat predefined chunks as
+                  necessary, making this the first true generator on the
+                  Internet. It uses a dictionary of over 200 Latin words,
+                  combined with a handful of model sentence structures, to
+                  generate Lorem Ipsum which looks reasonable. The generated
+                  Lorem Ipsum is therefore always free from repetition, injected
+                  humour, or non-characteristic words etc
+                </p>
+                <figure>
+                  <img
+                    src="assets/images/news/news-6.jpg"
+                    alt="Berita Detail"
+                  />
+                </figure>
+                <p>
+                  The standard chunk of Lorem Ipsum used since the 1500s is
+                  reproduced below for those interested. Sections 1.10.32 and
+                  1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+                  also reproduced in their exact original form, accompanied by
+                  English versions from the 1914 translation by H. Rackham.
+                </p>
+
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable. If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text. All the Lorem Ipsum
+                  generators on the Internet tend to repeat predefined chunks as
+                  necessary, making this the first true generator on the
+                  Internet. It uses a dictionary of over 200 Latin words,
+                  combined with a handful of model sentence structures, to
+                  generate Lorem Ipsum which looks reasonable. The generated
+                  Lorem Ipsum is therefore always free from repetition, injected
+                  humour, or non-characteristic words etc
+                </p>
+
+                <div class="article-read mb-10">
+                  <div class="thumb">
+                    <img src="assets/images/icon/read.png" alt="Baca Juga" />
+                  </div>
+                  <div>
+                    <h3>Baca Juga</h3>
+                    <ul>
+                      <li>
+                        <a href="#"
+                          >Direktur Utama LPDP, Sudarto, tegaskan beasiswa
+                          inklusif untuk menjaring talenta terbaik tanpa
+                          memandang status ekonomi keluarga.</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          >Direktur Utama LPDP, Sudarto, tegaskan beasiswa
+                          inklusif untuk menjaring talenta terbaik tanpa
+                          memandang status ekonomi keluarga.</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable. If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text. All the Lorem Ipsum
+                  generators on the Internet tend to repeat predefined chunks as
+                  necessary, making this the first true generator on the
+                  Internet. It uses a dictionary of over 200 Latin words,
+                  combined with a handful of model sentence structures, to
+                  generate Lorem Ipsum which looks reasonable. The generated
+                  Lorem Ipsum is therefore always free from repetition, injected
+                  humour, or non-characteristic words etc.
+                </p>
+              </div>
+
+              <!-- Iklan Below Article -->
+              <div class="iklan-container">
+                <a href="https://example.com" target="_blank">
+                  <div class="banner-iklan">Banner Iklan 320 x 100</div>
+                </a>
+              </div>
+              <!-- Batas Iklan -->
+
+              <div class="article-share">
+                <span>Bagikan:</span>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">WhatsApp</a>
+              </div>
+
+              <div class="article-tags">
+                <div class="title mt-10">
+                  <h4>Liks</h4>
+                  <div class="title-line"></div>
+                </div>
+                <a href="#">Industri</a>
+                <a href="#">Pangan</a>
+                <a href="#">Nasional</a>
+                <a href="#">MBG</a>
+                <a href="#">Prabowo</a>
+              </div>
+
+              <div class="share-article share-bottom mt-20">
+                <h4>Share Link</h4>
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="assets/images/icon/share-fb.svg"
+                        alt="Facebook"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="assets/images/icon/share-wa.svg"
+                        alt="WhatsApp"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img src="assets/images/icon/share-x.svg" alt="X"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="assets/images/icon/share-tele.svg"
+                        alt="Telegram"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img src="assets/images/icon/share-link.svg" alt="Link"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-20 mb-30">
+                <img
+                  src="assets/images/icon/comment.png"
+                  alt="Komentar"
+                  width="100%"
+                />
+              </div>
+            </div>
+
+            <!-- KANAN (SIDEBAR) -->
+            <div class="detail-side">
+              <div class="sidebar-banner">
+                <img
+                  src="assets/images/banner/300x600.png"
+                  alt="Banner Sidebar"
+                />
+              </div>
+
+              <div class="side-category">
+                <h2>Diskusi Terpanas</h2>
+
+                <div class="side-category-news">
+                  <span class="news-number">1</span>
+                  <div class="news-content">
+                    <h3 class="news-title">Lorem Ipsum is Dummy Text</h3>
+                    <div class="news-meta">
+                      <span class="news-category">News</span> |
+                      <span class="news-time">35 Menit Lalu</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="side-category-news">
+                  <span class="news-number">2</span>
+                  <div class="news-content">
+                    <h3 class="news-title">Dolor Sit Amet Consectetur</h3>
+                    <div class="news-meta">
+                      <span class="news-category">News</span> |
+                      <span class="news-time">1 Jam Lalu</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="side-category-news">
+                  <span class="news-number">3</span>
+                  <div class="news-content">
+                    <h3 class="news-title">
+                      Kisah Adik Darius Sinathrya Masuk Islam, Tersentuh
+                      Perjalanan Nabi Muhammad
+                    </h3>
+                    <div class="news-meta">
+                      <span class="news-category">News</span> |
+                      <span class="news-time">2 Jam Lalu</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="side-category-news">
+                  <span class="news-number">4</span>
+                  <div class="news-content">
+                    <h3 class="news-title">
+                      Kisah Adik Darius Sinathrya Masuk Islam, Tersentuh
+                      Perjalanan Nabi Muhammad
+                    </h3>
+                    <div class="news-meta">
+                      <span class="news-category">News</span> |
+                      <span class="news-time">2 Jam Lalu</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="side-category-news">
+                  <span class="news-number">5</span>
+                  <div class="news-content">
+                    <h3 class="news-title">
+                      Snoop Dogg Bikin Heboh di Swansea
+                    </h3>
+                    <div class="news-meta">
+                      <span class="news-category">News</span> |
+                      <span class="news-time">2 Jam Lalu</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="latest-side mt-30">
+                  <div class="title">
+                    <h4>Yoursay</h4>
+                    <div class="title-line"></div>
+                  </div>
+
+                  <div class="yoursay-items">
+                    <div class="yoursay-item">
+                      <img src="assets/images/news/news-5.png" alt="Opini 1" />
+                      <div class="yoursay-text">
+                        <p>Opini: Kenaikan Harga Bahan Pokok Jadi Sorotan</p>
+                        <span>30 Menit</span>
+                      </div>
+                    </div>
+
+                    <div class="yoursay-item">
+                      <img src="assets/images/news/news-4.jpg" alt="Opini 2" />
+                      <div class="yoursay-text">
+                        <p>
+                          Analisis: Tren Startup Teknologi di Indonesia 2026
+                        </p>
+                        <span>30 Menit</span>
+                      </div>
+                    </div>
+
+                    <div class="yoursay-item">
+                      <img src="assets/images/news/news-1.jpg" alt="Opini 3" />
+                      <div class="yoursay-text">
+                        <p>
+                          Analisis: Tren Startup Teknologi di Indonesia 2026
+                        </p>
+                        <span>30 Menit</span>
+                      </div>
+                    </div>
+
+                    <div class="yoursay-item">
+                      <img src="assets/images/news/news-1.jpg" alt="Opini 4" />
+                      <div class="yoursay-text">
+                        <p>
+                          Analisis: Tren Startup Teknologi di Indonesia 2026
+                        </p>
+                        <span>30 Menit</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="liks">
+                  <div class="title mt-10">
+                    <h4>Liks</h4>
+                    <div class="title-line"></div>
+                  </div>
+
+                  <div class="liks-item">
+                    <img
+                      src="assets/images/news/news-1.jpg"
+                      alt="Berita Liks 1"
+                    />
+                    <span class="liks-category">News</span>
+                    <h3 class="liks-title">Lorem Ipsum Is Dummy Text</h3>
+                    <span class="liks-time">35 Menit Lalu</span>
+                  </div>
+                </div>
+
+                <div class="sidebar-popular">
+                  <h2>
+                    <i
+                      ><img
+                        src="assets/images/icon/logo-populer.png"
+                        alt="Icon Populer"
+                    /></i>
+                    Terpopuler
+                  </h2>
+                  <ul>
+                    <li class="popular-item">
+                      <a href="#">
+                        <h3>
+                          Industri Pangan dan Chef memberikan makanan MBG
+                          Berkualitas
+                        </h3>
+                        <span>News | <i>35 Menit</i></span>
+                      </a>
+                    </li>
+                    <li class="popular-item">
+                      <a href="#">
+                        <h3>
+                          Industri Pangan dan Chef memberikan makanan MBG
+                          Berkualitas
+                        </h3>
+                        <span>News | <i>35 Menit</i></span>
+                      </a>
+                    </li>
+                    <li class="popular-item">
+                      <a href="#">
+                        <h3>
+                          Industri Pangan dan Chef memberikan makanan MBG
+                          Berkualitas
+                        </h3>
+                        <span>News | <i>35 Menit</i></span>
+                      </a>
+                    </li>
+                    <li class="popular-item">
+                      <a href="#">
+                        <h3>
+                          Industri Pangan dan Chef memberikan makanan MBG
+                          Berkualitas
+                        </h3>
+                        <span>News | <i>35 Menit</i></span>
+                      </a>
+                    </li>
+                    <li class="popular-item">
+                      <a href="#">
+                        <h3>
+                          Industri Pangan dan Chef memberikan makanan MBG
+                          Berkualitas
+                        </h3>
+                        <span>News | <i>35 Menit</i></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="foot-info">
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-logo">
+            <img
+              src="assets/images/logo-suara-white.png"
+              alt="Logo Suara White"
+              width="200"
+            />
+          </div>
+
+          <div class="foot-col">
+            <ul>
+              <li><a href="#">Redaksi</a></li>
+              <li><a href="#">Kontak</a></li>
+              <li><a href="#">Tentang Kami</a></li>
+              <li><a href="#">Karir</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Pedoman Media Siber</a></li>
+              <li><a href="#">Kebijakan Privasi</a></li>
+              <li><a href="#">Saran dan Kritik</a></li>
+              <li><a href="#">Site Map</a></li>
+            </ul>
+          </div>
+
+          <div class="foot-aps">
+            <h4>Dapatkan Aplikasi Suara.com</h4>
+            <div class="app-store-wrapper">
+              <div class="app-store">
+                <img src="assets/images/icon/playstore.svg" alt="Play Store" />
+              </div>
+              <div class="app-store">
+                <img src="assets/images/icon/iosstore.svg" alt="App Store" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot-network">
+      <div class="container">
+        <div class="foot-network-icon">
+          <ul>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-partner/arkadia.svg"
+                  alt="Arkadia"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/images/icon-partner/suara.svg" alt="Suara"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-partner/mata-mata.svg"
+                  alt="Matamata"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-partner/bolatimes.svg"
+                  alt="Bolatimes"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-partner/hitekno.svg"
+                  alt="Hitekno"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/images/icon-partner/dewiku.svg" alt="Dewiku"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-partner/mobimoto.svg"
+                  alt="Mobimoto"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-partner/himedik.svg"
+                  alt="Himedik"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="foot-sosmed">
+          <ul>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-sosmed/icon-google.svg"
+                  alt="Google"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-sosmed/icon-fb.svg"
+                  alt="Facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-sosmed/icon-thread.svg"
+                  alt="Threads"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/images/icon-sosmed/icon-x.svg" alt="X"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-sosmed/icon-youtube.svg"
+                  alt="YouTube"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-sosmed/icon-instagram.svg"
+                  alt="Instagram"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="assets/images/icon-sosmed/icon-tiktok.svg"
+                  alt="TikTok"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer py-5">
+      <div class="container">
+        <p>© 2026 suara.com - All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- JAVASCRIPT LOGIC (Terisolasi dari Bentrokan Variabel Global) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. Header Fixed Scroll Logic
+        const headerElem = document.querySelector(".header");
+        let lastScroll = 0;
+        let ticking = false;
+
+        window.addEventListener("scroll", () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              const currentScroll = window.scrollY;
+              if (currentScroll > 300) {
+                headerElem.classList.add("fixed", "shadow", "show");
+                headerElem.classList.remove("hide");
+              } else {
+                headerElem.classList.remove("fixed", "shadow", "show", "hide");
+              }
+              lastScroll = currentScroll;
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+
+        // 2. Menu Scroll Navigation Logic
+        const menuScrollElem = document.querySelector(".menu-scroll");
+        if (menuScrollElem && headerElem) {
+          const headerHeight = headerElem.offsetHeight;
+          const menuOffset = menuScrollElem.offsetTop;
+
+          window.addEventListener("scroll", function () {
+            if (window.scrollY >= menuOffset - headerHeight) {
+              menuScrollElem.classList.add("fixed");
+              menuScrollElem.style.top = headerHeight + "px";
+            } else {
+              menuScrollElem.classList.remove("fixed");
+              menuScrollElem.style.top = "0";
+            }
+          });
+
+          window.addEventListener("resize", function () {
+            menuScrollElem.style.top = headerElem.offsetHeight + "px";
+          });
+        }
+
+        // 3. Slide Menu & Hamburger Toggle
+        const hamburgerBtn = document.getElementById("hamburger");
+        const slideMenu = document.getElementById("menu");
+        const overlayElem = document.getElementById("overlay");
+        const closeMenuBtn = document.getElementById("closeBtn");
+
+        if (hamburgerBtn && slideMenu && overlayElem) {
+          hamburgerBtn.onclick = () => {
+            slideMenu.classList.add("active");
+            overlayElem.classList.add("active");
+            hamburgerBtn.classList.add("active");
+          };
+
+          function closeMenu() {
+            slideMenu.classList.remove("active");
+            overlayElem.classList.remove("active");
+            hamburgerBtn.classList.remove("active");
+          }
+
+          overlayElem.onclick = closeMenu;
+          if (closeMenuBtn) closeMenuBtn.onclick = closeMenu;
+        }
+
+        // Submenu Toggle inside Slide Menu
+        document
+          .querySelectorAll(".has-submenu .menu-link")
+          .forEach(function (menuItem) {
+            menuItem.addEventListener("click", function (e) {
+              const rect = this.getBoundingClientRect();
+              const clickX = e.clientX;
+
+              if (clickX > rect.right - 60) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest(".has-submenu");
+                document
+                  .querySelectorAll(".has-submenu")
+                  .forEach(function (item) {
+                    if (item !== parentLi) item.classList.remove("active");
+                  });
+                parentLi.classList.toggle("active");
+              }
+            });
+          });
+
+        // 4. Account Popup Toggle
+        const accountBtn = document.getElementById("account-btn");
+        const accountPopup = document.getElementById("account-popup");
+        if (accountBtn && accountPopup) {
+          accountBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            accountPopup.style.display =
+              accountPopup.style.display === "block" ? "none" : "block";
+          });
+
+          document.addEventListener("click", function (e) {
+            if (!e.target.closest(".account")) {
+              accountPopup.style.display = "none";
+            }
+          });
+        }
+
+        // 5. Author Profile Popup Toggle
+        const authorTrigger = document.querySelector(".author-trigger");
+        const authorPopup = document.querySelector(".author-popup");
+
+        if (authorTrigger && authorPopup) {
+          authorTrigger.addEventListener("click", function (e) {
+            e.preventDefault();
+            authorPopup.style.display =
+              authorPopup.style.display === "block" ? "none" : "block";
+          });
+
+          document.addEventListener("click", function (e) {
+            if (!e.target.closest(".article-profile")) {
+              authorPopup.style.display = "none";
+            }
+          });
+        }
+
+        // 6. Regional Popup Toggle & Close Button Fix
+        const regionalBtn = document.getElementById("regional-btn");
+        const regionalPopup = document.getElementById("regional-popup");
+        const closeRegionalBtn = document.getElementById("close-popup");
+
+        if (regionalBtn && regionalPopup) {
+          regionalBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            regionalPopup.classList.toggle("show");
+            regionalBtn.classList.toggle("active");
+          });
+
+          if (closeRegionalBtn) {
+            closeRegionalBtn.addEventListener("click", function () {
+              regionalPopup.classList.remove("show");
+              regionalBtn.classList.remove("active");
+            });
+          }
+
+          document.addEventListener("click", function (e) {
+            if (
+              !regionalBtn.contains(e.target) &&
+              !regionalPopup.contains(e.target)
+            ) {
+              regionalPopup.classList.remove("show");
+              regionalBtn.classList.remove("active");
+            }
+          });
+        }
+
+        // 7. Trending Slider Logic
+        const slider = document.querySelector(".trending-slider");
+        const prevBtn = document.querySelector(".trending-prev");
+        const nextBtn = document.querySelector(".trending-next");
+
+        if (slider && prevBtn && nextBtn) {
+          let position = 0;
+          const step = 200;
+
+          function updateButtons() {
+            prevBtn.style.display = position >= 0 ? "none" : "block";
+            const maxScroll =
+              slider.scrollWidth - slider.parentElement.clientWidth;
+            nextBtn.style.display =
+              Math.abs(position) >= maxScroll ? "none" : "block";
+          }
+
+          nextBtn.onclick = () => {
+            const maxScroll =
+              slider.scrollWidth - slider.parentElement.clientWidth;
+            position -= step;
+            if (Math.abs(position) > maxScroll) position = -maxScroll;
+            slider.style.transform = `translateX(${position}px)`;
+            slider.style.transition = "0.3s ease";
+            updateButtons();
+          };
+
+          prevBtn.onclick = () => {
+            position += step;
+            if (position > 0) position = 0;
+            slider.style.transform = `translateX(${position}px)`;
+            slider.style.transition = "0.3s ease";
+            updateButtons();
+          };
+
+          updateButtons();
+        }
+
+        // 8. Sticky Sidebar Logic
+        const sidebar = document.querySelector(".sidebar-popular");
+        const footer = document.querySelector(".foot-info");
+        const liks = document.querySelector(".liks");
+
+        if (sidebar && footer && liks) {
+          const headerOffset = 20;
+
+          window.addEventListener("scroll", function () {
+            const scrollY = window.scrollY;
+            const sidebarHeight = sidebar.offsetHeight;
+            const footerTop =
+              footer.getBoundingClientRect().top + window.scrollY;
+            const liksBottom = liks.offsetTop + liks.offsetHeight;
+            const sidebarTop = scrollY + headerOffset;
+            const sidebarBottom = sidebarTop + sidebarHeight;
+
+            sidebar.classList.remove("is-sticky", "is-stop");
+
+            if (sidebarTop <= liksBottom + 10) return;
+
+            if (scrollY > sidebar.offsetTop - headerOffset) {
+              sidebar.classList.add("is-sticky");
+            }
+
+            if (sidebarBottom >= footerTop - 10) {
+              sidebar.classList.remove("is-sticky");
+              sidebar.classList.add("is-stop");
+            }
+          });
+        }
+
+        // 9. Swiper Initialization (Pengecekan Elemen)
+        if (document.querySelector(".movieSwiper")) {
+          new Swiper(".movieSwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 15,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        }
+      });
+
+      // 10.
+      document.querySelectorAll(".has-submenu > a").forEach(function (menu) {
+        menu.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          let parent = this.parentElement;
+
+          // Tutup semua yang lain
+          document.querySelectorAll(".has-submenu").forEach(function (item) {
+            if (item !== parent) {
+              item.classList.remove("active");
+            }
+          });
+
+          // Toggle yang diklik
+          parent.classList.toggle("active");
+        });
+      });
+
+      const accountBtn = document.getElementById("account-btn");
+      const account = document.querySelector(".account");
+
+      accountBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        account.classList.toggle("active");
+      });
+
+      document.addEventListener("click", function () {
+        account.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>

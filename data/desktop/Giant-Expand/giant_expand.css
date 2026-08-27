@@ -1,0 +1,51 @@
+.wrap__giant {
+  clear: both;
+  height: 600px;
+  z-index: 10;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#giant-container {
+  height: 600px;
+  width: 300px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.giant__stay {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.giant__expand {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+#giant-container:hover {
+  width: 1150px !important;
+}
+
+#giant-container:hover .giant__stay {
+  right: -300px !important;
+  display: none;
+  right: 0;
+}
+.giant__expand--link {
+  width: 1150px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
