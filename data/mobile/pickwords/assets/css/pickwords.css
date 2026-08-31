@@ -1,0 +1,67 @@
+.pickwords {
+  position: inherit !important;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.pickwords span {
+  visibility: hidden;
+  width: 320px;
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  overflow: hidden;
+  right: 0;
+  margin: -53px auto;
+  border-radius: 4px;
+}
+.pickwords img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: 0;
+}
+
+.pickwords:hover span,
+.pickwords.active span {
+  visibility: visible;
+}
+
+div.pickwordsHead,
+.pickwordsHead {
+  margin: 10px auto;
+  padding: 0 !important;
+}
+.pickwordsHead__desktop {
+  width: 468px;
+}
+.pickwordsHead__mobile {
+  width: 320px;
+}
+.pickwordsHead img {
+  width: 100%;
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+  .pickwords {
+    position: relative !important;
+  }
+
+  .pickwords span {
+    bottom: 100%;
+    left: 50%;
+    margin: 0 0 0 -150px;
+  }
+
+  div.pickwordsHead,
+  .pickwordsHead {
+    margin: 15px auto;
+  }
+}
+
+/* tribun */
+a.pickwords {
+  color: inherit;
+}

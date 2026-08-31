@@ -1,0 +1,144 @@
+.pushTopVideo {
+  background: #121212;
+  position: fixed;
+  top: 0;
+  color: #fff;
+  width: 100%;
+  display: none;
+  z-index: 10;
+}
+
+.pushTopVideo__container {
+  /* width: 300px; */
+  margin: 0 auto;
+}
+
+.pushTopVideo__video {
+  width: 40%;
+  float: left;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.pushTopVideo__text {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  width: 54%;
+  overflow: hidden;
+  padding: 5px 10px 0 10px;
+  float: left;
+  /* display: flex; */
+  align-items: center;
+  align-content: center;
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.pushTopVideo__text p {
+  margin: 5px 0;
+  overflow: hidden;
+  font-weight: bold;
+}
+.pushTopVideo__labelAd {
+  color: #7b7b7b;
+  border: 1px solid #7b7b7b;
+  border-radius: 4px;
+  top: 0;
+  font-size: 9px;
+  padding: 1px 3px;
+  font-weight: bold;
+}
+.pushTopAd {
+  width: 300px;
+  height: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.pushTopVideo__labelAdSponsored {
+  color: #3ca5dd;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  text-transform: uppercase;
+  display: block;
+  font-size: 9px;
+  font-weight: bold;
+}
+.pushTopClose {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  background: #121212;
+  height: 20px;
+  padding: 4px;
+}
+.pushTopVideo__iconplay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 46px;
+  top: 0;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.btnOpen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.landingArticle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* click to open */
+.pushTopOpen .pushTopVideo__video,
+.pushTopOpen .pushTopVideo__text {
+  width: 100%;
+  text-align: center;
+  float: none;
+  display: block;
+}
+.pushTopOpen .pushTopVideo__text {
+  min-height: auto;
+}
+.pushTopOpen .pushTopAd {
+  height: 250px;
+  margin: 10px auto;
+}
+
+/* rewrite */
+.pushTopOpen .header {
+  top: 485px;
+}
+.pushTopOpen .floating-share--nav.scrolling {
+  top: 540px;
+}
+
+.pushTopVideo img {
+  width: 100%;
+}
+
+.pushTopVideo__video img {
+  height: 100%;
+}

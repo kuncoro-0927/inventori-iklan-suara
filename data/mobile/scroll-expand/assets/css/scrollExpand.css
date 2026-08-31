@@ -1,0 +1,159 @@
+/* =========================
+   Iklan Scroll Expand
+========================= */
+.flipscroll__container {
+  width: 320px;
+  margin: 10px auto 10px auto !important;
+  padding: 0 !important;
+  background-size: 100%;
+  position: relative;
+  z-index: 7;
+  -webkit-transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* easeOutQuart */
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* easeOutQuart */
+}
+
+.flipscroll {
+  font-size: 14px !important;
+  padding: 0 !important;
+  margin: 10px auto 10px auto !important;
+  height: 100px;
+}
+.imgHL .flipscroll {
+  height: 50px !important;
+}
+
+.flipscroll img {
+  max-width: none;
+  width: 100%;
+}
+
+.flipscroll .flipscroll__wrap {
+  background-size: 100% !important;
+  -webkit-transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* easeOutQuart */
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* easeOutQuart */
+}
+
+.flipscroll__a {
+  height: 120px;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.imgHL .flipscroll__a {
+  height: 50px !important;
+  width: 320px !important;
+}
+
+.flipscroll__b {
+  height: 0px;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.flipscroll__b.show {
+  height: 0 !important;
+}
+.flipscroll__b {
+  width: 100%;
+  max-width: 320px;
+  margin: 0px auto;
+  left: 0px;
+  right: 0px;
+}
+
+.closebanner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+#guideline {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  z-index: 99999;
+}
+
+/* non autoplay */
+.viewyt {
+  position: absolute;
+  font-size: 12px;
+  right: 20px;
+  bottom: 10px;
+  background: red;
+  color: #fff;
+  padding: 6px 20px;
+  text-transform: uppercase;
+}
+
+.scrollexpand__link {
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  border: none;
+  z-index: 5;
+}
+.scrollexpand__play {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  border: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.se_icon__play {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

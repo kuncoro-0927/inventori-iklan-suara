@@ -1,0 +1,161 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.insliderSmall {
+  width: 320px;
+  height: 110px;
+  margin: 5px auto;
+  position: relative;
+  overflow: hidden;
+}
+.insliderSmall__video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 180px;
+  height: 100px;
+  overflow: hidden;
+}
+.insliderSmall__video video {
+  width: 100%;
+}
+.inslider {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  z-index: 99999;
+  -webkit-transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -ms-transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  overflow: hidden;
+}
+
+.insliderTop {
+  bottom: auto;
+  top: 0px;
+}
+.bapps-show .premium_div .insliderTop {
+  top: 150px;
+}
+.insliderTop__relative {
+  position: relative;
+}
+/* wp */
+.insliderTop__kompas {
+  top: 95px;
+}
+.kcm--read .insliderTop__kompas {
+  top: 105px;
+}
+.bapps-show.kcm--read #js-banner-sticky .banner1 .insliderTop__kompas {
+  top: 160px;
+}
+.insliderTop__tribun {
+  top: 50px;
+}
+.insliderTop__bolasport {
+  top: 60px;
+}
+.insliderTop__grioto {
+  top: 65px;
+}
+.insliderTop__kompasiana {
+  top: 63px;
+}
+
+.inslider__wrap {
+  display: flex;
+  background: #000;
+}
+.inslider__img {
+  position: relative;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.inslider__img__video {
+  width: 25%;
+}
+.inslider__img__video img {
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.inslider__video {
+  width: 75%;
+  height: 100%;
+  left: 0px;
+}
+
+.inslider img,
+.inslider__img img {
+  width: 100%;
+  max-width: none;
+}
+
+.inslider.inslider--play {
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.inslider.inslider--stop {
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.inslider__link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.inslider__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+}
+
+/* rollup */
+#dfp-container-rollup.container {
+  bottom: 200px !important;
+}
+
+#dfp-appear.rollup {
+  bottom: 200px !important;
+}
+
+#dfp-close-rollup.rollup {
+  bottom: 375px !important;
+}
+
+/* kompascom */
+/* .banner--sticky .banner1.addInslider {
+  animation: unset !important;
+  position: relative !important;
+} */
