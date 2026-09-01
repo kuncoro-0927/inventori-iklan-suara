@@ -1,0 +1,174 @@
+/* *, *:before, *:after {-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}html{margin:0;padding:0}body{font-family:$font_body;font-size:18px;font-weight:400;color:$cl_textbody;line-height:1.3;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased;margin:0;padding:0;height:100%;background-position:0 80px;background-size:100%}html,body{height:100%;width:100%}article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}a{color:inherit;text-decoration:none;vertical-align:top;outline:0;@include base_transition(all);&:hover{//color:#000;text-decoration:underline}}a:focus,button:focus{outline:0;outline:-webkit-focus-ring-color auto 0;outline-offset:0}img{max-width:100%;width:auto;height:auto;vertical-align:middle;border:0;-ms-interpolation-mode:bicubic}table{border-collapse:collapse}iframe{border:0;vertical-align:top}li,ul,ol{margin:0;padding:0;list-style:none}ul li{display:inline-block;list-style:none;vertical-align:top}h1,h2,h3,h4,h5,h6{margin:0;line-height:1.2;color:inherit;text-rendering:optimizelegibility;font-weight:normal}h1,h2,h3{line-height:1.3}h1{font-size:2.5em}h2{font-size:2em}h3{font-size:1.2857em}h4{font-size:1em}h5{font-size:.9375em}h6{font-size:.786em}p{line-height:1.5;margin:3px 0 15px} */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+.sectionBanner li,
+.sectionBanner ul,
+.sectionBanner ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sectionBanner img {
+  max-width: 100%;
+  width: 100%;
+}
+.sectionBanner {
+  position: relative;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+}
+
+.sectionBanner__bg {
+  width: 100%;
+}
+
+.sectionBanner__layer,
+.sectionBanner__bgColor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.sectionBanner__layer.play {
+  left: -50px;
+}
+
+.sectionBanner__bgColor {
+  height: 100%;
+  opacity: 0;
+}
+.sectionBanner__bgColor.play {
+  height: 100%;
+  opacity: 0.9;
+}
+
+.sectionBanner ul {
+  position: absolute;
+  padding-left: 62%;
+  top: 25%;
+  height: auto;
+}
+.sectionBanner ul li {
+  margin-right: 15px;
+  border-bottom: none;
+}
+.sectionBanner ul li:last-child {
+  padding-right: 70%;
+}
+.sectionBanner ul li p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  white-space: initial;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3em;
+  margin-top: 8px;
+  text-align: left;
+}
+.sectionBanner__post__img {
+  border-radius: 6px;
+  width: 95px;
+  height: 95px;
+  overflow: hidden;
+}
+.sectionBanner__post__img img {
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.iconTag {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  max-width: 60px;
+}
+.iconTag img {
+  /* max-width: 75px; */
+}
+.iconMore {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #fff;
+  width: 15px;
+}
+
+.scrollsectionBanner {
+  display: flex;
+  /* align-items: center; */
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollsectionBanner.clBlank p {
+  color: #000;
+}
+.scroll-item-outersectionBanner {
+  scroll-snap-stop: always;
+}
+.sectionBanner__globalLink {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.clBlank {
+  color: #000;
+}
+@supports (scroll-snap-align: start) {
+  /* modern scroll snap points */
+  .scrollsectionBanner {
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-item-outersectionBanner {
+    scroll-snap-align: end;
+  }
+}
+
+@supports not (scroll-snap-align: start) {
+  /* old scroll snap points spec */
+  .scrollsectionBanner {
+    -webkit-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory;
+    -webkit-scroll-snap-destination: 0 50%;
+    scroll-snap-destination: 0 50%;
+    -webkit-scroll-snap-points-x: repeat(70%);
+    scroll-snap-points-x: repeat(70%);
+  }
+
+  .scroll-item-outersectionBanner {
+    scroll-snap-coordinate: 0 0;
+  }
+}
+
+/* media query */
+@media (max-width: 320px) {
+  .sectionBanner ul li p {
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+  }
+}

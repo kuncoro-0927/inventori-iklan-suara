@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prenagen x Tribunnews</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/materialieze.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+  </head>
+
+  <body>
+    <div class="quiz">
+      <div class="quiz__main">
+        <!-- cover -->
+        <div class="quiz__main__step1">
+          <div class="quiz__main__step1--bg">
+            <img src="assets/images/bg.jpg" />
+          </div>
+          <div class="quiz__main__step1--logo">
+            <img src="assets/images/logo_new.png" />
+          </div>
+          <div class="quiz__main__step1--quiz">
+            <img src="assets/images/quiz.png" />
+          </div>
+          <div class="quiz__main__step1--item2">
+            <img src="assets/images/total.png" />
+          </div>
+          <div class="quiz__main__step1--item3">
+            <img src="assets/images/tiga.png" />
+          </div>
+          <div class="quiz__main__step1--item4">
+            <img src="assets/images/sudah.png" />
+          </div>
+          <div class="quiz__main__step1--cta next1">
+            <img src="assets/images/ct.png" />
+          </div>
+        </div>
+
+        <form id="ajaxForm" method="post" action="">
+          <!-- step 2-->
+          <div class="quiz__main__step2">
+            <div class="step2__content">
+              <div class="step2__content__header">
+                <img src="assets/images/logo.png" />
+              </div>
+              <div class="step2__content__questiont">
+                <p>
+                  1. Kandungan apa yang terkandung dalam Nutrive Benecol yang
+                  sudah teruji klinis mampu menurunkan dan menjaga kolesterol?
+                </p>
+                <div class="radio-toolbar">
+                  <ul>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio1"
+                        name="radios1"
+                        value="a"
+                        required
+                      />
+                      <label for="radio1">a. Plant stanol ester</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio2"
+                        name="radios1"
+                        value="b"
+                        required
+                      />
+                      <label for="radio2">b. Inulin</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio3"
+                        name="radios1"
+                        value="c"
+                        required
+                      />
+                      <label for="radio3">c. Oat</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio4"
+                        name="radios1"
+                        value="d"
+                        required
+                      />
+                      <label for="radio4">d. Beta glucan</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="step2__content__questiont">
+                <p>2. Berapa anjuran minum Nutrive Benecol yang disarankan?</p>
+                <div class="radio-toolbar">
+                  <ul>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio5"
+                        name="radios2"
+                        value="a"
+                        required
+                      />
+                      <label for="radio5">a. Seminggu 3x</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio6"
+                        name="radios2"
+                        value="b"
+                        required
+                      />
+                      <label for="radio6">b. Sehari 1x</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio7"
+                        name="radios2"
+                        value="c"
+                        required
+                      />
+                      <label for="radio7"
+                        >c. Sehari 2x langsung setelah makan</label
+                      >
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="radio8"
+                        name="radios2"
+                        value="d"
+                        required
+                      />
+                      <label for="radio8">d. Dua hari sekali</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="step3__content__questiont1">
+                <p>3. Seberapa menarik artikel ini menurutmu?</p>
+                <div class="full-stars">
+                  <div class="rating-group">
+                    <input
+                      disabled
+                      checked
+                      class="rating__input rating__input--none"
+                      name="rating1"
+                      id="rating1-none"
+                      value="0"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="1 star"
+                      class="rating__label"
+                      for="rating1-1"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating1"
+                      id="rating1-1"
+                      value="1"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="2 stars"
+                      class="rating__label"
+                      for="rating1-2"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating1"
+                      id="rating1-2"
+                      value="2"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="3 stars"
+                      class="rating__label"
+                      for="rating1-3"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating1"
+                      id="rating1-3"
+                      value="3"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="4 stars"
+                      class="rating__label"
+                      for="rating1-4"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating1"
+                      id="rating1-4"
+                      value="4"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="5 stars"
+                      class="rating__label"
+                      for="rating1-5"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating1"
+                      id="rating1-5"
+                      value="5"
+                      type="radio"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="step2__content__cari">
+                <p>Cari jawaban di <b>artikel ini</b></p>
+              </div>
+              <div class="step2__content__btn next2" id="next2">
+                <div class="step2__content__btn--n">
+                  Selanjutnya
+                  <i
+                    style="font-size: 24px; padding-left: 10px"
+                    class="fa fa-angle-right"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 3-->
+          <div class="quiz__main__step3">
+            <div class="step3__content">
+              <div class="step3__content__header">
+                <img src="assets/images/logo.png" />
+              </div>
+              <div class="step3__content__questiont">
+                <p>
+                  4. Apakah kamu mendapat info yang bermanfaat setelah membaca
+                  artikel kesehatan kolaborasi Tribunnews.com dan KALBE?
+                </p>
+                <div class="full-stars">
+                  <div class="rating-group">
+                    <input
+                      disabled
+                      checked
+                      class="rating__input rating__input--none"
+                      name="rating3"
+                      id="rating3-none"
+                      value="0"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="1 star"
+                      class="rating__label"
+                      for="rating3-1"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating3"
+                      id="rating3-1"
+                      value="1"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="2 stars"
+                      class="rating__label"
+                      for="rating3-2"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating3"
+                      id="rating3-2"
+                      value="2"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="3 stars"
+                      class="rating__label"
+                      for="rating3-3"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating3"
+                      id="rating3-3"
+                      value="3"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="4 stars"
+                      class="rating__label"
+                      for="rating3-4"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating3"
+                      id="rating3-4"
+                      value="4"
+                      type="radio"
+                      required
+                    />
+                    <label
+                      aria-label="5 stars"
+                      class="rating__label"
+                      for="rating3-5"
+                      ><i class="rating__icon rating__icon--star fa fa-star"></i
+                    ></label>
+                    <input
+                      class="rating__input"
+                      name="rating3"
+                      id="rating3-5"
+                      value="5"
+                      type="radio"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="step3__content__questiont">
+                <p>
+                  5. Informasi/artikel kesehatan apa lagi sih yang kamu butuhkan
+                  pada saat ini dan nanti?
+                </p>
+                <div class="step3__content__questiont--isi">
+                  <textarea
+                    name="informasi"
+                    id="q5"
+                    placeholder="Ketik disini...."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <div class="step3__content__questiont">
+                <p>
+                  6. Berikan saran dan masukan kepada KALBE tentang apapun,
+                  karena mereka mau tahu langsung darimu! Boleh tentang kuis
+                  ini, artikel, atau curcol!
+                </p>
+                <div class="step3__content__questiont--isi">
+                  <textarea
+                    name="saran"
+                    id="q6"
+                    placeholder="Ketik disini...."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <div class="step3__content__btnb nextb3">
+                <div class="step3__content__btnb--n">
+                  <i
+                    style="font-size: 24px; padding-right: 10px"
+                    class="fa fa-angle-left"
+                  ></i
+                  >Kembali
+                </div>
+              </div>
+              <div class="step3__content__btn next3" id="next3">
+                <div class="step3__content__btn--n">
+                  Selanjutnya
+                  <i
+                    style="font-size: 24px; padding-left: 10px"
+                    class="fa fa-angle-right"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="quiz__main__step4">
+            <div class="step4__content">
+              <div class="step4__content__header">
+                <img src="assets/images/logo.png" />
+              </div>
+              <div class="step4__content__title">
+                SELAMAT
+                <div class="step4__content__title--sub">
+                  Kamu sudah setengah jalan untuk<br />
+                  mendapatkan hadiah!*
+                </div>
+                <div class="step4__content__title--sub2">
+                  Isi data berikut dan ikuti ketentuannya yuk
+                </div>
+              </div>
+              <div class="step4__content__form">
+                <div class="input-field">
+                  <input
+                    type="text"
+                    id="nama"
+                    class="validate"
+                    required=""
+                    oninvalid="this.setCustomValidity('Masukan Nama Lengkap')"
+                    oninput="setCustomValidity('')"
+                    required
+                  />
+                  <label for="username" class="">Nama Lengkap</label>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="email"
+                    id="email"
+                    class="validate"
+                    required=""
+                    oninvalid="this.setCustomValidity('Masukan Email Aktif')"
+                    oninput="setCustomValidity('')"
+                    required
+                  />
+                  <label for="password">Email Aktif</label>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="text"
+                    id="handphone"
+                    class="validate"
+                    required=""
+                    oninvalid="this.setCustomValidity('Masukan No Hp')"
+                    oninput="setCustomValidity('')"
+                    required
+                  />
+                  <label for="password">No Hp</label>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="text"
+                    id="domisili"
+                    class="validate"
+                    required=""
+                    oninvalid="this.setCustomValidity('Masukan Kota Domisili')"
+                    oninput="setCustomValidity('')"
+                    required
+                  />
+                  <label for="password">Kota Domisili</label>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="text"
+                    id="akun_ig"
+                    class="validate"
+                    required=""
+                    oninvalid="this.setCustomValidity('Masukan Akun Instagram')"
+                    oninput="setCustomValidity('')"
+                    required
+                  />
+                  <label for="password">Akun Instagram</label>
+                </div>
+              </div>
+
+              <!-- syarat -->
+              <div id="postresult"></div>
+              <div class="step4__content__syarat">
+                <div class="step4__content__syarat--content">
+                  <div><b>*SYARAT DAN KETENTUAN</b></div>
+                  <div>
+                    1. Peserta yang mengikuti kuis ini merupakan Warga Negara
+                    Indonesia
+                  </div>
+                  <div>2. Wajib Follow Akun Intagram @nutrivebenecol_id</div>
+                  <div>
+                    3. Peserta yang mengikuti kuis harus mengisi pertanyaan kuis
+                    dan data diri dengan lengkap
+                  </div>
+                  <div>
+                    4. Pemilihan pemenang bersifat mutlak dari KALBE dan
+                    Tribunnews.com tidak dapat diganggu gugat
+                  </div>
+                  <div>
+                    5. Data diri perserta akan dijamin kerahasiaannya oleh pihak
+                    KALBE dan Tribunnews
+                  </div>
+                  <div>
+                    6. Dengan mengikuti seluruh ketentuan, maka kamu otomatis
+                    menjadi peserta dan berkesempatan untuk menjadi pemenang.
+                  </div>
+                  <div>7. Pajak potongan hadiah ditanggung pemenang.</div>
+                  <div>
+                    8. Kuis berakhir tanggal 10 Oktober 2020. Pemenang akan
+                    diumumkan di Instagram @Tribunnews
+                  </div>
+                </div>
+              </div>
+              <div class="step4__content__btnb nextb4">
+                <div class="step4__content__btnb--n">
+                  <i
+                    style="font-size: 24px; padding-right: 10px"
+                    class="fa fa-angle-left"
+                  ></i
+                  >Kembali
+                </div>
+              </div>
+              <div class="step3__content__btn next3" id="next3">
+                <input type="submit" class="btn-submit" value="Submit" />
+              </div>
+            </div>
+          </div>
+
+          <!-- final -->
+          <div class="quiz__main__step5">
+            <div class="step5__content">
+              <div class="step5__content__title">KETENTUAN AKHIR</div>
+              <div class="step5__content__sub">
+                Follow akun Instagram di bawah ini sebagai salah satu syarat
+                untuk jadi pemenang!
+              </div>
+              <div class="step5__content__follow">
+                <a
+                  href="https://www.instagram.com/nutrivebenecol_id/"
+                  target="blank"
+                >
+                  <img src="assets/images/ig.png" />
+                </a>
+              </div>
+              <div class="step5__content__sub2">
+                TERIMA KASIH SUDAH BERPARTISIPASI!
+              </div>
+              <div class="step5__content__sub3">Kuis berakhir pada</div>
+              <div class="step5__content__sub4">10 Oktober 2020</div>
+              <div class="step5__content__sub5">
+                Semoga beruntung, Tribunners!
+              </div>
+              <div class="step5__content__close">
+                <a href="">
+                  <div class="step5__content__close--n scale-up-center2">
+                    Tutup
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <!-- loader -->
+        <div class="loader">
+          <img src="assets/images/loader.gif" width="100" />
+        </div>
+
+        <!--alert -->
+        <div class="error">
+          <div class="error__content">
+            <p>
+              Masi ada yang belum terjawab nih, harap isi semua pertanyaan dan
+              kuisnya ya
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- js -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      $("#ajaxForm").submit(function (e) {
+        e.preventDefault();
+
+        var q1 = $('input[name="radios1"]:checked').val();
+        var q2 = $('input[name="radios2"]:checked').val();
+        var q3 = $('input[name="rating1"]:checked').val();
+        var q4 = $('input[name="rating3"]:checked').val();
+        var q5 = $("#q5").val();
+        var q6 = $("#q6").val();
+
+        var nama = $("#nama").val();
+        var email = $("#email").val();
+        var handphone = $("#handphone").val();
+        var domisili = $("#domisili").val();
+        var akun_ig = $("#akun_ig").val();
+
+        $.ajax({
+          type: "POST",
+          url: "https://blog.tribunjualbeli.com/kalbe/kalbe_quiz",
+          dataType: "text",
+          data: {
+            nama: nama,
+            email: email,
+            handphone: handphone,
+            domisili: domisili,
+            ig: akun_ig,
+            q1: q1,
+            q2: q2,
+            q3: q3,
+            q4: q4,
+            q5: q5,
+            q6: q6,
+          },
+        })
+          .done(function () {
+            $(".quiz__main__step4").addClass("final");
+          })
+          .fail(function () {
+            $(".quiz__main__step4").addClass("final");
+          });
+      });
+    </script>
+  </body>
+</html>

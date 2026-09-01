@@ -1,0 +1,41 @@
+.immersiveLeft {
+  left: 0;
+}
+.immersiveRight {
+  right: 0;
+}
+.immersivePoint {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  right: 0;
+  bottom: 20%;
+  overflow: hidden;
+  z-index: 9999;
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  -webkit-box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.immersivePoint img {
+  width: 100%;
+}
+.immersivePointOff {
+  right: -100%;
+}
+
+#div-gpt-ad-mid-banner > div {
+  overflow: visible;
+}
+#div-gpt-ad-bottom-frame {
+  height: auto;
+}
+
+.reserved-topmedium:before {
+  background: none !important;
+}

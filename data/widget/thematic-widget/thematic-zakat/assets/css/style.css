@@ -1,0 +1,268 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+}
+
+.zakat {
+  width: 300px;
+  height: 600px;
+  margin: 0px auto;
+  box-shadow: 0px 0px 2px 0px;
+  position: relative;
+}
+
+.zakat__main {
+  height: 350px;
+  width: 100%;
+}
+
+.zakat__banner {
+  height: 250px;
+  width: 100%;
+  background: #273246;
+  text-align: center;
+}
+
+.zakat__header {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 60px;
+  padding: 10px 10px 10px 10px;
+  background: #067a3e;
+}
+
+.zakat__header > div:nth-child(1) {
+  width: 60%;
+}
+
+.zakat__header > div:nth-child(2) {
+  width: 40%;
+}
+
+.zakat__header__item1 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.zakat__header > div:nth-child(1) {
+  width: 50%;
+}
+
+.zakat__header > div:nth-child(2) {
+  width: 50%;
+}
+
+.zakat__header__item1--title {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+.zakat__header__item1--title p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
+
+.zakat__header__item2 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 10px;
+  text-align: right;
+  color: #ffffff;
+}
+
+.zakat__header__item2--logo img {
+  padding-top: 3px;
+  width: 100px;
+}
+
+.zakat__header__item1 img {
+  width: 60px;
+}
+
+.zakat__main {
+  background: #fcf7f8;
+}
+
+.tab__nav {
+  display: table;
+  width: 100%;
+}
+
+.tab__nav a:first-child {
+  border-left: 0;
+}
+
+.tab__nav a {
+  display: table-cell;
+  vertical-align: top;
+  width: 50%;
+  padding: 9px 5px;
+  position: relative;
+  color: #273246;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  background: #fff;
+}
+
+.tab__nav a:first-child {
+  border-left: 0;
+}
+
+.tab__nav a.active:first-child {
+  background: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  color: #273246;
+}
+
+.tab__nav a.active:first-child:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 2px;
+  background-color: #f7931d;
+  z-index: 5;
+}
+
+.tab__nav a.active:nth-child(2) {
+  background: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  color: #273246;
+}
+
+.tab__nav a.active:nth-child(2):after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 150px;
+  height: 2px;
+  background-color: #f7931d;
+}
+
+.tab__main {
+  padding: 15px 15px 0px 15px;
+  position: relative;
+  background: transparent;
+}
+
+.tab__main-content {
+  display: none;
+}
+
+.tab__main-content:first-child {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+.form-group label {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  color: #273246;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  height: 30px;
+  background-color: #fdfff3;
+  font-family: "Muli", sans-serif;
+  font-size: 10px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #273246;
+  border: 1px solid #273246;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.form-btn {
+  text-align: center;
+  padding-top: 3px;
+}
+
+input {
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  padding: 10px;
+}
+
+.tab__main-content .form-final {
+  display: none;
+}
+
+.btnpenghailan {
+  font-family: Muli;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 10px 30px;
+  border: none;
+  color: #ffffff;
+  background: #f7931d;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btnpenghailan:hover {
+  transform: scale(1.1);
+}
+.btnmal {
+  font-family: Muli;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 10px 30px;
+  border: none;
+  color: #ffffff;
+  background: #f7931d;
+  border-radius: 18px;
+  transition: transform 0.2s;
+}
+
+.btnmal:hover {
+  transform: scale(1.1);
+}
+.tab__main .loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #fcf7f8;
+}
+
+.tab__main .loader {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}

@@ -1,0 +1,203 @@
+<style>
+  .ad-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    margin: 20px auto;
+    transition: all 0.4s ease-out;
+  }
+
+  .ad-close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 36px;
+    height: 36px;
+    background-color: #e50914;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .ad-close-btn:hover {
+    background-color: #b20710;
+    transform: scale(1.1);
+  }
+
+  /* Container Utama Banner */
+  .ad-container {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    background-color: #000000;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition:
+      transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+      box-shadow 0.4s ease;
+    will-change: transform;
+  }
+
+  /* Hover halus pada desktop */
+  .ad-container:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  }
+
+  .ad-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+  }
+
+  .scroll-notice {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.7)
+    );
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .scroll-icon {
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(4px);
+    }
+    60% {
+      transform: translateY(2px);
+    }
+  }
+
+  .ad-wrapper.closed {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    margin: 0 auto;
+    height: 0;
+    overflow: hidden;
+  }
+</style>
+
+<div class="ad-wrapper" id="adWrapper">
+  <!-- Tombol Close diletakkan DILUAR ad-container -->
+  <button
+    type="button"
+    class="ad-close-btn"
+    id="closeAdBtn"
+    aria-label="Tutup Iklan"
+  >
+    &times;
+  </button>
+
+  <!-- Banner Container -->
+  <div class="ad-container" id="bannerAd">
+    <!-- Gambar SVG 320x480 -->
+    <img
+      src="assets/images/banner/320x480.svg"
+      alt="Banner Ads 320x480"
+      class="ad-banner-img"
+      id="bannerImg"
+    />
+
+    <!-- Petunjuk Scroll -->
+    <div class="scroll-notice">
+      SCROLL UNTUK MEMBACA ARTIKEL INI
+      <span class="scroll-icon">↓</span>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  (function () {
+    const bannerWrapper = document.getElementById("adWrapper");
+    const banner = document.getElementById("bannerAd");
+    const bannerImg = document.getElementById("bannerImg");
+    const closeBtn = document.getElementById("closeAdBtn");
+
+    if (!bannerWrapper || !banner || !bannerImg || !closeBtn) return;
+
+    // Efek Parallax & Zoom Halus Saat Scroll
+    window.addEventListener("scroll", function () {
+      if (!bannerWrapper.classList.contains("closed")) {
+        const rect = banner.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const scrollPercent =
+            (rect.top + rect.height / 2 - windowHeight / 2) /
+            (windowHeight / 2);
+          const translateY = scrollPercent * 25;
+          const scale = 1.08 + Math.abs(scrollPercent) * 0.05;
+
+          bannerImg.style.transform = `translateY(${translateY}px) scale(${scale})`;
+        }
+      }
+    });
+
+    // Klik Tombol Close
+    closeBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      bannerWrapper.classList.add("closed");
+
+      setTimeout(() => {
+        bannerWrapper.remove();
+      }, 400);
+    });
+
+    // Klik Banner
+    banner.addEventListener("click", function () {
+      const targetUrl = "https://example.com";
+      window.open(targetUrl, "_blank");
+    });
+  })();
+</script>

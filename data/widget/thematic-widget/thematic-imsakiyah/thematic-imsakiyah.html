@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Widget Imsakiyah Ramadhan</title>
+
+    <!-- css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="canvas-small">
+      <div class="canvas-small__bg">
+        <img src="assets/images/bg600.jpg" />
+      </div>
+      <div class="canvas-small__bg2">
+        <img src="assets/images/footer-big.png" />
+      </div>
+      <div class="canvas-small__sponsore">Sponsored by:</div>
+      <div class="canvas-small__title">
+        <img src="assets/images/title-big.png" />
+      </div>
+
+      <div class="canvas-small__item">
+        <div class="canvas-small__item--tanggal">
+          <div>Jadwal Sholat</div>
+          <div>
+            <div id="tanggal"></div>
+          </div>
+        </div>
+        <div class="canvas-small__item--bg"></div>
+        <div class="styleSelect">
+          <form action="" method="post" name="form1" id="form1">
+            <select id="pilihan_kota" onChange="widget_jadwal_sholat()">
+              <option value="10">Kota Bangkalan</option>
+              <option value="14">Kota Banyuwangi</option>
+              <option value="49">Kota Gresik</option>
+              <option value="54">Kota Jember</option>
+              <option value="130">Kota Jombang</option>
+              <option value="58">Kota Kediri</option>
+              <option value="65">Kota Lamongan</option>
+              <option value="70">Kota Madiun</option>
+              <option value="75">Kota Malang</option>
+              <option value="84">Kota Mojokerto</option>
+              <option value="91">Kota Pamekasan</option>
+              <option value="94">Kota Pasuruan</option>
+              <option value="105">Kota Sampang</option>
+              <option value="113" selected>Kota Surabaya</option>
+              <option value="128">Kota Sumenep</option>
+              <option value="129">Kota Sidoarjo</option>
+            </select>
+          </form>
+        </div>
+        <div id="table-jdw-sholat"></div>
+      </div>
+
+      <!-- js -->
+      <script src="js/PrayTimes.js"></script>
+      <script src="js/DataTP.js"></script>
+
+      <script type="text/javascript">
+        window.onload = function () {
+          widget_jadwal_sholat();
+        };
+      </script>
+    </div>
+  </body>
+</html>

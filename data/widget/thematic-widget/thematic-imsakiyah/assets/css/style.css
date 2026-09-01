@@ -1,0 +1,153 @@
+/*@font-face {
+  font-family: GOTHICB;
+  src: url(../font/GOTHICB.woff);
+}*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /*font-family: 'GOTHICB';*/
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #2b388f;
+  height: 600px;
+  /*font-weight: bold;*/
+  overflow: hidden;
+}
+
+.canvas-small {
+  width: 300px;
+  height: 600px;
+  margin: 0px auto;
+  position: relative;
+}
+
+.canvas-small__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.canvas-small__bg2 {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  z-index: 2;
+}
+.canvas-small__sponsore {
+  font-size: 11.8px;
+  color: #fff;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-bottom: 60px;
+}
+.canvas-small__title {
+  text-align: center;
+  padding-right: 10px;
+}
+
+.canvas-small__item {
+  position: relative;
+  margin: 0px 25px;
+}
+.canvas-small__item--tanggal {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.canvas-small__item--tanggal > div:nth-child(1) {
+  width: 50%;
+  font-size: 11.8px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+.canvas-small__item--tanggal > div:nth-child(2) {
+  width: 50%;
+  font-size: 11.8px;
+  text-align: left;
+  padding-top: 15px;
+  margin-left: -5px;
+  padding-bottom: 20px;
+}
+
+.canvas-small__item--bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 20px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+  padding-bottom: 65px;
+}
+
+#table-jdw-sholat {
+  margin: 0px auto 0 auto;
+  border: none;
+  outline: none;
+  font-size: 11.8px;
+  font-weight: bold;
+}
+
+#timetable {
+  font-weight: bold;
+  min-width: 85%;
+  width: auto;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+}
+
+#timetable tr {
+  padding: 5px 0;
+}
+
+#timetable td {
+  min-width: 20px;
+  width: auto;
+  padding: 2.5px 0;
+  border: none;
+  border-bottom: 0.5px solid #c1b49a;
+}
+
+#timetable th {
+  text-align: center;
+  padding: 0;
+  border: none;
+  font-weight: normal;
+  background: none;
+}
+
+form#form1 {
+  margin: 0px 50px;
+}
+
+select {
+  background: transparent;
+  width: 100%;
+  border: 0;
+  color: #2b388f;
+  border-radius: 0;
+  vertical-align: middle;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.styleSelect {
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+option {
+  border: 0;
+  color: #111;
+}

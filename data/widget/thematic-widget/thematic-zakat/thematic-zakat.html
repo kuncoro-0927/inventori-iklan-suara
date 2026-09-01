@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widged zakat</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Muli&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="zakat">
+      <div class="zakat__main">
+        <div class="zakat__header">
+          <div class="zakat__header__item1">
+            <div class="zakat__header__item1--logo">
+              <img src="assets/images/logo.png" />
+            </div>
+            <div class="zakat__header__item1--title">
+              Sempurnakan ibadah dengan
+              <p>BERZAKAT</p>
+            </div>
+          </div>
+          <div class="zakat__header__item2">
+            <span>Powered By:</span>
+            <div class="zakat__header__item2--logo">
+              <a href="#" target="blank">
+                <img src="assets/images/sponsored.jpg" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="tab__nav">
+            <a href="#ZP" class="active">ZAKAT PENGHASILAN</a>
+            <a href="#ZS">ZAKAT MAL</a>
+          </div>
+          <div class="tab__main">
+            <!-- zakat penghasilan -->
+            <div id="ZP" class="tab__main-content">
+              <form class="form form-horizontal form-hitung" id="form">
+                <div class="form-group">
+                  <label>Penghasilan per Bulan</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Rp. 0"
+                    name="pendapatan"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Bonus Pendapatan dan Lain-lain per Bulan</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Rp. 0"
+                    name="pendapatan_lain"
+                  />
+                </div>
+                <div class="form-group">
+                  <label
+                    >Pengeluaran Kebutuhan Pokok (termasuk hutang jatuh tempo)
+                    per Bulan</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Rp. 0"
+                    name="hutang"
+                  />
+                </div>
+
+                <div class="form-btn">
+                  <button
+                    type="button"
+                    class="btnpenghailan btn-hitung"
+                    id="hitungZakatPenghasilan"
+                  >
+                    Hitung Zakat Sekarang
+                  </button>
+                </div>
+              </form>
+              <form class="form form-horizontal form-final">
+                <div class="form-group">
+                  <label>Apakah saya wajib membayar zakat penghasilan ?</label>
+                  <h3 id="status_zakat_penghasilan">YA</h3>
+                </div>
+                <div class="form-group">
+                  <label>Zakat yang harus anda bayarkan perbulan:</label>
+                  <h3 id="bayar_zakat_penghasilan"></h3>
+                </div>
+                <div class="form-btn">
+                  <button
+                    type="button"
+                    class="btnpenghailan btn-hitung btn-ulang btn-ulang-penghasilan"
+                  >
+                    Hitung Zakat Ulang
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- zakat  Mal -->
+            <div id="ZS" class="tab__main-content">
+              <form class="form form-horizontal form-hitung" id="form">
+                <div class="form-group">
+                  <label>Harta Emas, Perak, Dan Sejenisnya</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Rp. 0"
+                    name="harta_tabungan"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Harta Lainnya</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Rp. 0"
+                    name="harta_lain"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Hutang jatuh tempo saya membayar zakat:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Rp. 0"
+                    name="hutang_jatuh_tempo"
+                  />
+                </div>
+                <div class="form-btn">
+                  <button
+                    type="button"
+                    class="btnmal btn-hitung"
+                    id="hitungZakatSimpanan"
+                  >
+                    Hitung Zakat Sekarang
+                  </button>
+                </div>
+              </form>
+              <form class="form form-horizontal form-final">
+                <div class="form-group">
+                  <label>Apakah saya wajib membayar zakat penghasilan ?</label>
+                  <h3 id="status"></h3>
+                </div>
+                <div class="form-group">
+                  <label>Zakat yang harus anda bayarkan perbulan:</label>
+                  <h3 id="bayar_zakat"></h3>
+                </div>
+                <div class="form-btn">
+                  <button
+                    type="button"
+                    class="btnmal btn-hitung btn-ulang btn-ulang-simpanan"
+                  >
+                    Hitung Zakat Ulang
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="loader">
+              <img src="assets/images/loader.gif" width="64" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="zakat__banner">
+        <a href="#" target="blank">
+          <img src="assets/images/banner.jpg" />
+        </a>
+      </div>
+    </div>
+
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jspdf.min.js"></script>
+    <script type="text/javascript" src="js/plugin.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

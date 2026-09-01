@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Video on Banner</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 300px;
+        height: 250px;
+        overflow: hidden;
+      }
+      .vobWrap {
+        width: 300px;
+        height: 250px;
+        overflow: hidden;
+      }
+      .video-on-banner {
+        position: relative;
+        width: 300px;
+        height: 250px;
+        background: url("assets/images/300x250-live.jpg");
+        background-size: 300px 250px;
+      }
+      .imageArea,
+      .videoArea,
+      .bannerLink {
+        position: absolute;
+      }
+      .videoArea {
+        bottom: 0px;
+      }
+      .iframe-container,
+      .iframe-container iframe {
+        width: 300px;
+        height: 169px;
+      }
+      a.bannerLink {
+        background-color: transparent;
+        width: 300px;
+        height: 81px;
+      }
+    </style>
+    <div class="vobWrap">
+      <div class="video-on-banner">
+        <div class="videoArea">
+          <div class="iframe-container">
+            <div id="player"></div>
+          </div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=5fvztaHtZfU"
+          class="bannerLink"
+          target="_blank"
+        ></a>
+      </div>
+    </div>
+    <script>
+      var tag = document.createElement("script");
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("player", {
+          width: "100%",
+          videoId: "5fvztaHtZfU",
+          playerVars: { autoplay: 1, playsinline: 1 },
+          events: {
+            onReady: onPlayerReady,
+          },
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.mute();
+        event.target.playVideo();
+      }
+    </script>
+  </body>
+</html>
