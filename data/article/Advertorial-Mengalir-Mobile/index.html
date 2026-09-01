@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Suara</title>
+    <link rel="stylesheet" href="assets/css/style-1.0.1.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="banner-container"></div>
+
+    <script>
+      fetch("banner/banner-320x480.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const container = document.getElementById("banner-container");
+          container.innerHTML = data;
+
+          container.querySelectorAll("script").forEach((oldScript) => {
+            const newScript = document.createElement("script");
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+          });
+        });
+    </script>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="assets/images/icon/logo.svg"
+              alt="Logo Website"
+              width="180px"
+              height="21px"
+            />
+          </a>
+        </div>
+
+        <div class="search">
+          <button class="search-btn" id="search-btn">
+            <img src="assets/images/icon/search.svg" width="20" alt="Search" />
+          </button>
+        </div>
+
+        <div class="search-overlay" id="search-overlay">
+          <div class="search-header">
+            <button class="back-btn" id="close-search">←</button>
+            <input type="text" placeholder="Cari berita..." />
+          </div>
+          <div class="search-content">
+            <div class="trending">
+              <i
+                ><img src="assets/images/icon/trending.svg" alt="Trending"
+              /></i>
+              <span>Trending</span>
+            </div>
+            <ul>
+              <li>
+                <a href="">Indonesia</a>
+                <span
+                  ><img
+                    src="assets/images/icon/icon-chart.webp"
+                    alt="Trending Search"
+                /></span>
+              </li>
+              <li>
+                <a href="">Kamerun</a>
+                <span
+                  ><img
+                    src="assets/images/icon/icon-chart.webp"
+                    alt="Trending Search"
+                /></span>
+              </li>
+              <li>
+                <a href="">WFH</a>
+                <span
+                  ><img
+                    src="assets/images/icon/icon-chart.webp"
+                    alt="Trending Search"
+                /></span>
+              </li>
+              <li>
+                <a href="">Honda</a>
+                <span
+                  ><img
+                    src="assets/images/icon/icon-chart.webp"
+                    alt="Trending Search"
+                /></span>
+              </li>
+              <li>
+                <a href="">Malaysia</a>
+                <span
+                  ><img
+                    src="assets/images/icon/icon-chart.webp"
+                    alt="Trending Search"
+                /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- HAMBURGER -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Buka menu navigasi"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- OVERLAY -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- MENU -->
+        <div class="slide-menu" id="menu">
+          <div class="menu-header">
+            <button class="close-btn" id="closeBtn">✕</button>
+          </div>
+          <div class="menu-loginuser">
+            <a href="" class="user"
+              ><img src="assets/images/icon/menu-user.svg" alt="Menu User"
+            /></a>
+          </div>
+          <ul class="menu-list">
+            <li class="has-submenu">
+              <div class="menu-link">
+                <i><img src="assets/images/icon/menu-news.svg" alt="" /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  News
+                </a>
+                <span class="arrow"></span>
+              </div>
+
+              <div class="submenu">
+                <a href="kanal.html">Nasional</a>
+                <a href="kanal.html">Metropolitan</a>
+                <a href="kanal.html">Internasional</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-bisnis.svg"
+                    alt="Menu Bisnis"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Bisnis
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Makro</a>
+                <a href="kanal.html">Asuransi</a>
+                <a href="kanal.html">Keuangan</a>
+                <a href="kanal.html">Properti</a>
+                <a href="kanal.html">Inspiratif</a>
+                <a href="kanal.html">Ekopol</a>
+                <a href="kanal.html">Energi</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img src="assets/images/icon/menu-bola.svg" alt="Menu Bola"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Bola
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Bola Indonesia</a>
+                <a href="kanal.html">Liga Inggris</a>
+                <a href="kanal.html">Liga Italia</a>
+                <a href="kanal.html">Bola Dunia</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-sport.svg"
+                    alt="Menu Sport"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Sport
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Raket</a>
+                <a href="kanal.html">Balap</a>
+                <a href="kanal.html">Arena</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-lifestyle.svg"
+                    alt="Menu Lifestyle"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Lifestyle
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Female</a>
+                <a href="kanal.html">Male</a>
+                <a href="kanal.html">Relationship</a>
+                <a href="kanal.html">Food & Travel</a>
+                <a href="kanal.html">Komunitas</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-entertainment.svg"
+                    alt="Menu Entertainment"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Entertainment
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Gosip</a>
+                <a href="kanal.html">Music</a>
+                <a href="kanal.html">Fllm</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-otomotif.svg"
+                    alt="Menu Otomotif"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Otomotif
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Mobil</a>
+                <a href="kanal.html">Motor</a>
+                <a href="kanal.html">Autoseleb</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-tekno.svg"
+                    alt="Menu Tekno"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Tekno
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Internet</a>
+                <a href="kanal.html">Gadget</a>
+                <a href="kanal.html">Tekno</a>
+                <a href="kanal.html">Saint</a>
+                <a href="kanal.html">Game</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-healt.svg"
+                    alt="Menu Healt"
+                /></i>
+                <a
+                  href="kanal.html"
+                  class="menu-text"
+                  onclick="event.stopPropagation()"
+                >
+                  Healt
+                </a>
+                <span class="arrow"></span>
+              </div>
+              <div class="submenu">
+                <a href="kanal.html">Women</a>
+                <a href="kanal.html">Men</a>
+                <a href="kanal.html">Parenting</a>
+                <a href="kanal.html">Konsultasi</a>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-foto.svg"
+                    alt="Menu Foto" /></i
+                ><a href="kanal.html">Foto</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-video.svg"
+                    alt="Menu Video" /></i
+                ><a href="kanal.html">Video</a>
+              </div>
+            </li>
+            <li>
+              <div class="menu-link">
+                <i
+                  ><img
+                    src="assets/images/icon/menu-opini.svg"
+                    alt="Menu Opini" /></i
+                ><a href="kanal.html">Opini</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="regional mt-20">
+            <li class="title">
+              <a href="kanal.html">Regional</a>
+            </li>
+
+            <li><a href="kanal.html">Jakarta</a></li>
+            <li><a href="kanal.html">Jabar</a></li>
+            <li><a href="kanal.html">Jatim</a></li>
+            <li><a href="kanal.html">Jateng</a></li>
+            <li><a href="kanal.html">Sumut</a></li>
+            <li><a href="kanal.html">Banten</a></li>
+            <li><a href="kanal.html">Sulsel</a></li>
+            <li><a href="kanal.html">Bali</a></li>
+            <li><a href="kanal.html">Sumsel</a></li>
+            <li><a href="kanal.html">Jogja</a></li>
+            <li><a href="kanal.html">Riau</a></li>
+            <li><a href="kanal.html">Lampung</a></li>
+            <li><a href="kanal.html">Kaltim</a></li>
+            <li><a href="kanal.html">Kalbar</a></li>
+            <li><a href="kanal.html">Sumbar</a></li>
+            <li><a href="kanal.html">Bogor</a></li>
+            <li><a href="kanal.html">Bekasi</a></li>
+            <li><a href="kanal.html">Malang</a></li>
+            <li><a href="kanal.html">Surakarta</a></li>
+          </ul>
+
+          <div class="menu-bottom">
+            <p>Available On</p>
+            <div class="menu-store">
+              <div>
+                <img src="assets/images/icon/playstore.svg" alt="Playstore" />
+              </div>
+              <div>
+                <img src="assets/images/icon/iosstore.svg" alt="Ios Store" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-scroll">
+      <div class="menu-wrapper">
+        <a href="kanal.html">Nasional</a>
+        <a href="kanal.html">Ekonomi</a>
+        <a href="kanal.html">Bola</a>
+        <a href="kanal.html">Otomotif</a>
+        <a href="kanal.html">Entertainment</a>
+        <a href="kanal.html">Tekno</a>
+        <a href="kanal.html">Gaya Hidup</a>
+        <a href="kanal.html" id="regional-btn">Regional</a>
+      </div>
+    </div>
+
+    <section class="trending-menu mt-10">
+      <div class="container">
+        <div class="trending-wrapper">
+          <!-- Icon + Judul -->
+          <div class="trending-header">
+            <img
+              src="assets/images/icon/trending.svg"
+              alt="Trending"
+              class="trending-icon"
+            />
+            <span class="trending-title">Trending</span>
+          </div>
+
+          <!-- Menu wrapper -->
+          <div class="trending-slider-container">
+            <div class="trending-slider">
+              <div class="trending-item active">Bola</div>
+              <div class="trending-item">Tennis</div>
+              <div class="trending-item">Sepatu</div>
+              <div class="trending-item">Indonesia</div>
+              <div class="trending-item">Malaysia</div>
+              <div class="trending-item">Piala Dunia</div>
+              <div class="trending-item">Ekonomi</div>
+              <div class="trending-item">Tekno</div>
+              <div class="trending-item">Islam</div>
+              <div class="trending-item">Kristen</div>
+              <div class="trending-item">Budha</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <ul class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sepak Bola</a></li>
+        </ul>
+
+        <div class="detail-news">
+          <!-- Title -->
+          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+
+          <!-- Writer -->
+          <div class="writer-news mb-20">
+            <div class="writer-info">
+              <img src="assets/images/icon/user.svg" alt="User" />
+              <img src="assets/images/news/news-1.jpg" alt="User" />
+              <h2 class="author-trigger">
+                <a href="profile.html">Rohman Manawi</a>,
+                <a href="profile.html">Rully</a>
+              </h2>
+              <!-- dropdown -->
+              <div class="author-popup">
+                <p><a href="profile.html">Rohman Manawi</a></p>
+                <p><a href="profile.html">RUlly</a></p>
+              </div>
+            </div>
+            <small>30 Agustus 2025</small>
+          </div>
+
+          <!-- Share -->
+          <div class="share-article mt-20 mb-20">
+            <ul>
+              <li>
+                <a href="#"
+                  ><img src="assets/images/icon/share-fb.svg" alt="Facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="assets/images/icon/share-wa.svg" alt="Whatapps"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="assets/images/icon/share-x.svg" alt="X"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="assets/images/icon/share-tele.svg" alt="Telegram"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="assets/images/icon/share-link.svg" alt="Link"
+                /></a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <a
+              class="google-follow-btn"
+              rel="noopener"
+              href="https://www.google.com/preferences/source?q=suara.com"
+              target="_blank"
+              aria-label="follow google"
+            >
+              <img
+                src="https://assets.suara.com/suara/desktop/images/icon-sosmed/icon-google-color.svg"
+                alt="google"
+              />
+              <span>Atur, Baru Temukan</span>
+            </a>
+          </div>
+
+          <!-- Main Image -->
+          <figure class="article-image mt-20">
+            <a
+              href="https://example.com"
+              style="text-decoration: none"
+              target="_blank"
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background-color: #016fba;
+                  width: 100%;
+                  height: 240px;
+                  color: #fff;
+                  font-weight: 600;
+                  font-size: 25px;
+                "
+              >
+                380 x 240
+              </div>
+            </a>
+            <figcaption>
+              Lorem ipsum dolor sit amet consectetur adipisicing.
+            </figcaption>
+          </figure>
+
+          <!-- Content -->
+          <div class="article-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+              consequatur impedit aliquam, consequuntur nostrum quia explicabo
+              inventore eius amet expedita incidunt facilis cupiditate error
+              iste, enim laborum. Culpa sunt velit nihil accusamus distinctio,
+              ipsa dolores!
+            </p>
+
+            <div class="ten-second mb-10">
+              <div class="heading mt-20">
+                <img src="assets/images/icon/ten-second.png" alt="10 Detik" />
+              </div>
+
+              <ul>
+                <li>
+                  <a href="#">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Autem omnis nobis, dolorem modi pariatur iste blanditiis. In
+                    exercitationem neque iste.
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolor laudantium voluptatibus odit dolore totam.
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
+              magni deleniti dignissimos, nobis eligendi vitae dolorem aliquid
+              nesciunt praesentium facilis ex eius ipsum. Nostrum, debitis!
+            </p>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              delectus atque optio esse quibusdam laborum ullam blanditiis.
+              Veniam, itaque laborum, dolor consequatur architecto minima error,
+              cum amet alias aut sint ab suscipit! Cupiditate ut soluta dolore
+              omnis impedit! Facilis, voluptatibus.
+            </p>
+
+            <!-- Zigzag Image -->
+            <figure class="article-image zigzag">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background-color: #016fba;
+                  width: 425px;
+                  height: 240px;
+                  color: #fff;
+                  font-weight: 600;
+                  font-size: 25px;
+                "
+              >
+                425 x 240
+              </div>
+              <figcaption>
+                Lorem ipsum dolor, sit amet consectetur adipisicing.
+              </figcaption>
+            </figure>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam illum itaque, cupiditate, pariatur error, quasi rerum
+              sed odit odio ab perferendis eveniet culpa ratione soluta nihil
+              quisquam.
+            </p>
+
+            <!-- Zigzag Box 2 -->
+            <div class="article-read mb-10">
+              <div class="thumb">
+                <img
+                  src="assets/images/icon/read.png"
+                  width="50"
+                  height="36"
+                  alt="Baca Juga"
+                />
+              </div>
+              <div class="read-content">
+                <p>Baca Juga</p>
+                <ul>
+                  <li>
+                    <a href="#"
+                      >Lorem ipsum, dolor sit amet consectetur adipisicing
+                      elit.</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      >Lorem ipsum, dolor sit amet consectetur adipisicing
+                      elit.</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
+              quos molestiae nobis, eveniet illo repellat.
+            </p>
+
+            <!-- Tags -->
+            <div class="article-tags">
+              <div class="title mt-10">
+                <h3>TAG</h3>
+                <div class="title-line"></div>
+              </div>
+
+              <div class="tags-list">
+                <a href="#">lorem</a>
+                <a href="#">lorem</a>
+                <a href="#">lorem</a>
+                <a href="#">lorem</a>
+                <a href="#">lorem</a>
+              </div>
+            </div>
+
+            <!-- Comment -->
+            <div class="comment mt-20 mb-30">
+              <img
+                src="assets/images/icon/comment.png"
+                alt="Komentar"
+                width="100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Widget Artikel Tematik HUT Jakarta dinonaktifkan -->
+
+    <section class="yoursay">
+      <div class="yoursay-grid">
+        <div class="title">
+          <h4>Yoursay</h4>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="yoursay-item py-10">
+          <img src="assets/images/news/news-5.png" alt="Opini 1" />
+          <div class="yoursay-text">
+            <a href="">
+              <h2>Opini: Kenaikan Harga Bahan Pokok Jadi Sorotan</h2>
+            </a>
+            <span>30 Menit</span>
+          </div>
+        </div>
+
+        <div class="yoursay-item py-10">
+          <img src="assets/images/news/news-4.jpg" alt="Opini 2" />
+          <div class="yoursay-text">
+            <a href="">
+              <h2>Analisis: Tren Startup Teknologi di Indonesia 2026</h2>
+            </a>
+            <span>30 Menit</span>
+          </div>
+        </div>
+
+        <div class="yoursay-item py-10">
+          <img src="assets/images/news/news-1.jpg" alt="Opini 3" />
+          <div class="yoursay-text">
+            <a href="">
+              <h2>Analisis: Tren Startup Teknologi di Indonesia 2026</h2>
+            </a>
+
+            <span>30 Menit</span>
+          </div>
+        </div>
+
+        <div class="yoursay-item py-10">
+          <img src="assets/images/news/news-1.jpg" alt="Opini 4" />
+          <div class="yoursay-text">
+            <a href="">
+              <h2>Analisis: Tren Startup Teknologi di Indonesia 2026</h2>
+            </a>
+            <span>30 Menit</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END: Section Yoursay -->
+
+    <section class="category mt-30">
+      <div class="container">
+        <!-- Judul -->
+        <div class="title">
+          <h3>Terkini</h3>
+          <div class="title-line"></div>
+        </div>
+
+        <!-- Grid Utama -->
+        <div class="category-grid mt-30">
+          <div class="category-secondary">
+            <div class="category-item">
+              <img src="assets/images/news/news-2.jpg" alt="Berita 1" />
+
+              <div class="content">
+                <h4>
+                  Kasih paham: Industri Pangan dan Chef wrong man lost the
+                  times?
+                </h4>
+                <span><i>Tekno</i>| 25 Menit Lalu</span>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <img src="assets/images/news/news-3.jpg" alt="Berita 2" />
+
+              <div class="content">
+                <h4>
+                  Menkop Tak Mau Ambil Pusing Soal Impor Pikap untuk Koperasi
+                  Desa Merah Putih
+                </h4>
+                <span><i>Otomotif</i>| 25 Menit Lalu</span>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <img src="assets/images/news/news-4.jpg" alt="Berita 3" />
+
+              <div class="content">
+                <h4>
+                  Kurniawan Dwi Yulianto Pimpin Seleksi Perdana 42 Pemain Timnas
+                  Indonesia U-17
+                </h4>
+                <span><i>Bola</i>| 25 Menit Lalu</span>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <img src="assets/images/news/news-4.jpg" alt="Berita 3" />
+
+              <div class="content">
+                <h4>
+                  Kurniawan Dwi Yulianto Pimpin Seleksi Perdana 42 Pemain Timnas
+                  Indonesia U-17
+                </h4>
+                <span><i>Bola</i>| 25 Menit Lalu</span>
+              </div>
+            </div>
+            <div class="category-item">
+              <img src="assets/images/news/news-4.jpg" alt="Berita 3" />
+
+              <div class="content">
+                <h4>
+                  Kurniawan Dwi Yulianto Pimpin Seleksi Perdana 42 Pemain Timnas
+                  Indonesia U-17
+                </h4>
+                <span><i>Bola</i>| 25 Menit Lalu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="foot">
+      <div class="container">
+        <div class="foot-top">
+          <img src="assets/images/logo-suara-white.png" alt="Logo Bottom" />
+        </div>
+
+        <div class="line"></div>
+
+        <div class="foot-menu">
+          <ul>
+            <li><a href="">Redaksi</a></li>
+            <li><a href="">Kontak</a></li>
+            <li><a href="">Tentang Kami</a></li>
+            <li><a href="">Karir</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="">Pedoman Media Siber</a></li>
+            <li><a href="">Kebijakan Privasi</a></li>
+            <li><a href="">Saran dan Kritik</a></li>
+            <li><a href="">Site Map</a></li>
+          </ul>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="foot-bottom">
+          <div class="app-text">
+            <p>Dapatkan Aplikasi <br />Suara.com</p>
+          </div>
+
+          <div class="app-badge">
+            <img src="assets/images/icon/playstore.svg" alt="Playstore" />
+            <img src="assets/images/icon/iosstore.svg" alt="Ios store" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="foot-partner">
+      <div class="container">
+        <!-- PARTNER LOGO -->
+        <div class="partner-list">
+          <ul>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-partner/arkadia.svg"
+                  alt="Arkadia"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img src="assets/images/icon-partner/suara.svg" alt="Suara"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-partner/mata-mata.svg"
+                  alt="Mata Mata"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-partner/bolatimes.svg"
+                  alt="Bolatimes"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-partner/hitekno.svg"
+                  alt="Hitekno"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img src="assets/images/icon-partner/dewiku.svg" alt="Dewiku"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-partner/guideku.svg"
+                  alt="Guideku"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-partner/mobimoto.svg"
+                  alt="Mobimoto"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-partner/himedik.svg"
+                  alt="Himedik"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="line"></div>
+
+        <!-- SOCIAL -->
+        <div class="social-list">
+          <ul>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-sosmed/icon-google.svg"
+                  alt="Google"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-sosmed/icon-fb.svg"
+                  alt="Facebook"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-sosmed/icon-thread.svg"
+                  alt="Thread"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img src="assets/images/icon-sosmed/icon-x.svg" alt="X"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-sosmed/icon-youtube.svg"
+                  alt="Youtube"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-sosmed/icon-instagram.svg"
+                  alt="Instagram"
+              /></a>
+            </li>
+            <li class="icon">
+              <a href=""
+                ><img
+                  src="assets/images/icon-sosmed/icon-tiktok.svg"
+                  alt="Tiktok"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <p>© 2026 suara.com - All Rights Reserved.</p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const menu = document.getElementById("menu");
+      const overlay = document.getElementById("overlay");
+      const closeBtn = document.getElementById("closeBtn");
+
+      // OPEN
+      hamburger.onclick = () => {
+        menu.classList.add("active");
+        overlay.classList.add("active");
+        hamburger.classList.add("active");
+      };
+
+      // CLOSE
+      function closeMenu() {
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+        hamburger.classList.remove("active");
+      }
+
+      overlay.onclick = closeMenu;
+      closeBtn.onclick = closeMenu;
+
+      // SUBMENU
+      document.querySelectorAll(".menu-link").forEach((item) => {
+        item.onclick = function () {
+          const parent = this.parentElement;
+
+          document.querySelectorAll(".menu-list li").forEach((li) => {
+            if (li !== parent) li.classList.remove("open");
+          });
+
+          parent.classList.toggle("open");
+        };
+      });
+    </script>
+
+    <script>
+      document
+        .querySelectorAll(".has-submenu .menu-link")
+        .forEach(function (menu) {
+          menu.addEventListener("click", function (e) {
+            const rect = this.getBoundingClientRect();
+            const clickX = e.clientX;
+
+            if (clickX > rect.right - 60) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              const parent = this.closest(".has-submenu");
+
+              document
+                .querySelectorAll(".has-submenu")
+                .forEach(function (item) {
+                  if (item !== parent) item.classList.remove("active");
+                });
+
+              parent.classList.toggle("active");
+            }
+          });
+        });
+    </script>
+
+    <script>
+      (() => {
+        const openBtn = document.getElementById("search-btn");
+        const closeBtn = document.getElementById("close-search");
+        const overlay = document.getElementById("search-overlay");
+
+        if (!openBtn || !closeBtn || !overlay) return;
+
+        openBtn.onclick = () => {
+          overlay.classList.add("active");
+          setTimeout(() => {
+            overlay.querySelector("input")?.focus();
+          }, 200);
+        };
+
+        closeBtn.onclick = () => {
+          overlay.classList.remove("active");
+        };
+      })();
+    </script>
+
+    <script>
+      var swiper = new Swiper(".movieSwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 15,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const trigger = document.querySelector(".author-trigger");
+        const popup = document.querySelector(".author-popup");
+
+        // klik nama
+        trigger.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          popup.style.display =
+            popup.style.display === "block" ? "none" : "block";
+        });
+
+        // klik luar = tutup
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".writer-info")) {
+            popup.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

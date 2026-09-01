@@ -1,0 +1,170 @@
+<style>
+  /* widget */
+  .widget-hut-tematik {
+    width: 300px;
+    height: 600px;
+    background: url("assets/images/widget/bg-hut-ri.png") center center / cover
+      no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    overflow: hidden;
+  }
+  /* Diposisikan di bawah logo/background */
+  .widget-hut-tematik__content {
+    position: absolute;
+    top: 155px; /* sesuaikan dengan logo */
+    left: 18px;
+    right: 18px;
+  }
+
+  .widget-news-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .widget-news-item img {
+    width: 105px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .widget-news-item__body {
+    flex: 1;
+  }
+
+  .widget-news-item__title {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 700;
+  }
+
+  .widget-news-item__title a {
+    color: #222; /* Hitam agar jelas */
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .widget-news-item__title a:hover {
+    color: #d80000;
+  }
+
+  .widget-hut-tematik__footer {
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    transform: translateX(-50%);
+
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px 18px;
+    white-space: nowrap;
+  }
+
+  .widget-hut-tematik__footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    color: #ca040d;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .widget-hut-tematik__footer a span {
+    display: inline-block;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tematik Hut RI</title>
+  </head>
+  <body>
+    <div class="widget-hut-tematik">
+      <div class="widget-hut-tematik__content">
+        <div class="widget-news-item">
+          <a href="#">
+            <img
+              src="assets/images/news/news-4.jpg"
+              alt="5 Polisi Teladan Penerima Hoegeng Awards 2026"
+            />
+          </a>
+
+          <div class="widget-news-item__body">
+            <h2 class="widget-news-item__title">
+              <a href="#">
+                5 Polisi Teladan Penerima Hoegeng Awards 2026, Ini...
+              </a>
+            </h2>
+          </div>
+        </div>
+
+        <div class="widget-news-item">
+          <a href="#">
+            <img
+              src="assets/images/news/news-2.jpg"
+              alt="IM57 Sebut Hoegeng Awards"
+            />
+          </a>
+
+          <div class="widget-news-item__body">
+            <h2 class="widget-news-item__title">
+              <a href="#"> IM57+ Sebut Hoegeng Awards Jadi... </a>
+            </h2>
+          </div>
+        </div>
+
+        <div class="widget-news-item">
+          <a href="#">
+            <img
+              src="assets/images/news/news-3.jpg"
+              alt="IM57 Sebut Hoegeng Awards"
+            />
+          </a>
+
+          <div class="widget-news-item__body">
+            <h2 class="widget-news-item__title">
+              <a href="#"> IM57+ Sebut Hoegeng Awards Jadi... </a>
+            </h2>
+          </div>
+        </div>
+
+        <div class="widget-news-item">
+          <a href="#">
+            <img
+              src="assets/images/news/news-1.jpg"
+              alt="IM57 Sebut Hoegeng Awards"
+            />
+          </a>
+
+          <div class="widget-news-item__body">
+            <h2 class="widget-news-item__title">
+              <a href="#"> IM57+ Sebut Hoegeng Awards Jadi... </a>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget-hut-tematik__footer">
+        <a href="#"> Lihat Selengkapnya <span>→</span> </a>
+      </div>
+    </div>
+  </body>
+</html>
