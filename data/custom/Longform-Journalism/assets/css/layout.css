@@ -1,0 +1,624 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #000;
+  max-width: 100%;
+  overflow-x: hidden;
+  letter-spacing: -0.2px;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #03ac0e;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  color: #525252;
+}
+
+img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  vertical-align: middle;
+  width: 100%;
+}
+
+::selection {
+  background: #03ac0e;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #03ac0e;
+  color: #fff;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #03ac0e;
+}
+
+.iobitdev-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+}
+
+.content-boxed {
+  max-width: 700px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* h1,h2,h3 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+} */
+
+h2 {
+  font-family: "Merriweather", serif;
+  font-size: 32px;
+  line-height: 40px;
+  margin-block-end: 0.5em;
+}
+
+.logotitleBar {
+  width: 100%;
+  justify-content: space-between;
+  padding: 7px 30px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.logotitleBar .logo {
+  max-width: 148px;
+  border-right: 1px solid #525252;
+  padding-right: 15px;
+}
+
+.logotitleBar .title {
+  padding-left: 15px;
+}
+
+.shareTitle {
+  display: inline;
+}
+
+.btn-share {
+  width: 36px;
+  height: 36px;
+  background: #03ac0e;
+  display: inline-flex;
+  padding: 9px;
+  border-radius: 100px;
+  vertical-align: middle;
+  margin-left: 5px;
+  transition: 0.2s ease;
+}
+
+.btn-share:hover {
+  background: #006106;
+}
+
+header {
+  width: 100%;
+  height: 550px;
+  color: #fff;
+  position: relative;
+  background-color: #03ac0e;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 50px;
+}
+
+.tagTitle {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: #03ac0e;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 25px;
+}
+
+header .content {
+  width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 1;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 64px;
+  line-height: 82px;
+  font-weight: 400;
+}
+
+header .contentTitle {
+  margin: 10px auto;
+}
+
+header .sponsoredTitle {
+  font-family: "Merriweather", serif;
+  font-size: 18px;
+}
+
+header .sponsoredTitle .logo {
+  max-width: 145px;
+  display: inline-block;
+  margin-left: 7px;
+}
+
+.uxScroll {
+  pointer-events: none;
+  position: absolute;
+  width: 38px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+}
+
+.heroImg {
+  position: relative;
+  z-index: 0;
+}
+
+.photo {
+  max-width: 700px;
+}
+
+.photo img {
+  height: 393px;
+}
+
+.photo .caption {
+  text-align: center;
+  font-weight: 600;
+  font-style: italic;
+  background-color: #03ac0e;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  letter-spacing: 0;
+}
+
+hr {
+  border-width: 0px;
+  background-image: url("../img/separator.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 10px;
+  margin: auto;
+}
+
+.relatedLink {
+  justify-content: space-between;
+  border: 1px solid #03ac0e;
+  margin: 30px auto;
+  transition: 0.2s ease;
+}
+
+.relatedLink:hover {
+  background-color: #e5fae7;
+}
+
+.relatedLink:hover .icon img {
+  transform: translate(30%, 0%);
+}
+
+.relatedLink .titleLink {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  padding: 0 20px;
+}
+
+.relatedLink .link {
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #000;
+}
+
+.relatedLink .icon {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  background-color: #03ac0e;
+  text-align: center;
+}
+
+.relatedLink .icon img {
+  width: 26px;
+  transform: translate(0%, 0%);
+  transition: 0.3s ease;
+}
+
+section.contentAlt {
+  width: 100%;
+  background-color: #03ac0e;
+  color: #fff;
+  text-align: center;
+  padding: 35px 20px;
+  margin: 50px auto;
+}
+
+blockquote {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 24px;
+  position: relative;
+}
+
+blockquote::before {
+  content: " ";
+  background-image: url("../img/ico-quote-l.png");
+  position: absolute;
+  width: 74px;
+  height: 74px;
+  left: -80px;
+  top: -20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+blockquote::after {
+  content: " ";
+  background-image: url("../img/ico-quote-r.png");
+  position: absolute;
+  width: 74px;
+  height: 74px;
+  right: -80px;
+  bottom: -20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.quotesAuthor {
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  font-style: normal;
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+.infographic {
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.content iframe {
+  width: 100%;
+  height: 394px;
+  margin: 35px auto;
+}
+
+footer {
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  background-color: #03ac0e;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .content {
+  padding: 20px 5px 5px 5px;
+}
+
+footer .name {
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+footer .sponsoredLogo {
+  max-width: 199px;
+  margin: auto;
+}
+
+footer .credit {
+  justify-content: space-between;
+}
+
+footer .sponsored {
+  margin: 20px auto;
+}
+
+footer .copyright {
+  background-color: #464646;
+  padding: 10px;
+}
+
+.slide-top {
+  -webkit-animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+    alternate both;
+  animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+    alternate both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+/*PRELOADER*/
+#preloader {
+  background: #03ac0e;
+  height: 100%;
+  width: 100%;
+  z-index: 999999;
+  position: fixed;
+  overflow: hidden;
+}
+
+#preloader .container {
+  height: auto;
+}
+
+.display-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.display-center {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 1s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 1s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 1s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 1s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/*PRELOADER*/
+
+.backtotop {
+  width: 80px;
+  position: fixed;
+  opacity: 0;
+  bottom: 8%;
+  right: 3%;
+  z-index: 180;
+  transition: 0.7s ease;
+}
+
+.backtotop--show {
+  opacity: 1;
+}
+
+.backtotop img {
+  transition: 0.2s ease;
+  transform: scale(1, 1);
+}
+
+.backtotop a:hover img {
+  transform: scale(0.95, 0.95);
+}
+
+@media (max-width: 767px) {
+  .logotitleBar .title,
+  .shareTitle {
+    display: none;
+  }
+  .logotitleBar {
+    padding: 7px;
+  }
+  .logotitleBar .logo {
+    border-right: 0;
+    padding-right: 0;
+  }
+  header .content {
+    width: 340px;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  header .sponsoredTitle {
+    font-size: 14px;
+  }
+  .photo img {
+    height: 195px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  section.contentAlt {
+    padding: 20px 15px;
+    margin: 35px auto;
+  }
+  blockquote::before {
+    width: 50px;
+    height: 50px;
+    left: -10px;
+    top: -10px;
+  }
+  blockquote::after {
+    width: 50px;
+    height: 50px;
+    right: -10px;
+    bottom: -10px;
+  }
+  .infographic {
+    margin: 10px auto;
+  }
+  .relatedLink .titleLink {
+    padding: 10px;
+  }
+  .relatedLink .icon {
+    height: 101px;
+    line-height: 101px;
+  }
+  .content iframe {
+    height: 195px;
+    margin: 10px auto;
+  }
+  footer {
+    margin-top: 30px;
+  }
+  footer .credit {
+    flex-direction: column;
+  }
+  .creditEach {
+    margin-bottom: 15px;
+  }
+  footer .sponsored {
+    margin: 10px auto;
+  }
+  footer .sponsoredLogo {
+    max-width: 160px;
+  }
+  footer .copyright {
+    font-size: 12px;
+  }
+  .backtotop {
+    width: 60px;
+    bottom: 8%;
+    right: 4%;
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    height: 500px;
+  }
+  .uxScroll {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 370px) {
+  header {
+    height: 390px;
+  }
+  header .content {
+    width: 300px;
+  }
+  h1 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .relatedLink .icon {
+    height: 128px;
+    line-height: 128px;
+  }
+  .photo img {
+    height: 150px;
+  }
+}

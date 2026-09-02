@@ -1,0 +1,18 @@
+footer {
+  height: 50px;
+  background: #fff;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: $white;
+  text-align: center;
+  color: black;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  bottom: 0;
+  @include max-responsive($sm) {
+    font-size: 20px;
+    padding: 10px;
+    height: auto;
+  }
+}

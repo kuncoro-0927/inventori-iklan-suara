@@ -1,0 +1,47 @@
+.header {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 0px 0px;
+  // z-index: -1;
+  @include max-responsive($xs) {
+    img {
+      width: 60%;
+    }
+  }
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 337px;
+    height: 79px;
+    color: #fff;
+    &--item {
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        // background-color: #333;
+      }
+      li {
+        float: left;
+        width: 50%;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        height: 79px;
+        text-decoration: none;
+        @include max-responsive($sm) {
+          height: 54px;
+        }
+      }
+    }
+  }
+}
