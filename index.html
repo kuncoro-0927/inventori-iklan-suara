@@ -66,7 +66,7 @@
             >Reach the Right Audience</span
           >
           <h1
-            class="flex items-center justify-center text-center text-3xl sm:text-5xl xl:text-5xl 2xl:text-6xl lg:max-w-xl font-bold leading-tight"
+            class="flex items-center justify-center text-center text-3xl sm:text-5xl xl:text-5xl 2xl:text-6xl max-w-sm sm:max-w-xl lg:max-w-xl 2xl:max-w-2xl font-bold leading-tight"
           >
             Suara.com Ad Banner Inventory
           </h1>
@@ -6500,61 +6500,76 @@
       const logoPutih = document.getElementById("logoPutih");
       const logoColor = document.getElementById("logoColor");
       const desiredTop = 20;
-      const navOffset =
-        navWrapper.getBoundingClientRect().top + window.scrollY - desiredTop;
 
+      function getNavOffset() {
+        return (
+          navWrapper.getBoundingClientRect().top + window.scrollY - desiredTop
+        );
+      }
+      let navOffset = getNavOffset();
+      window.addEventListener("resize", () => {
+        navOffset = getNavOffset();
+      });
+
+      let navTicking = false;
       window.addEventListener("scroll", () => {
-        if (window.scrollY > navOffset) {
-          if (!navWrapper.classList.contains("fixed")) {
-            navPlaceholder.style.height = navWrapper.offsetHeight + "px";
+        if (navTicking) return;
+        navTicking = true;
+        requestAnimationFrame(() => {
+          navTicking = false;
+
+          if (window.scrollY > navOffset) {
+            if (!navWrapper.classList.contains("fixed")) {
+              navPlaceholder.style.height = navWrapper.offsetHeight + "px";
+            }
+
+            navWrapper.classList.add(
+              "fixed",
+              "top-21",
+              "left-0",
+              "right-0",
+              "z-50",
+            );
+            navWrapper.style.height = "auto";
+
+            navList.classList.remove("bg-white/20", "text-white");
+            navList.classList.add(
+              "bg-white/70",
+              "border-black/10",
+              "text-black",
+              "shadow-md",
+            );
+
+            searchBtn.classList.remove("hidden", "bg-white/70", "text-white");
+            searchBtn.classList.add("flex", "bg-white/70", "text-black");
+            logoPutih.classList.add("hidden");
+            logoColor.classList.remove("hidden");
+          } else {
+            navWrapper.classList.remove(
+              "fixed",
+              "top-21",
+              "left-0",
+              "right-0",
+              "z-50",
+            );
+            navPlaceholder.style.height = "0px";
+
+            navList.classList.remove(
+              "bg-white/70",
+              "border-black/10",
+              "text-black",
+              "shadow-md",
+            );
+            navList.classList.add("bg-white/20");
+
+            searchBtn.classList.add("hidden", "bg-white/70", "text-white");
+            searchBtn.classList.remove("flex", "bg-white/70", "text-black");
+            logoPutih.classList.remove("hidden");
+            logoColor.classList.add("hidden");
+
+            searchDropdown.classList.add("hidden");
           }
-
-          navWrapper.classList.add(
-            "fixed",
-            "top-21",
-            "left-0",
-            "right-0",
-            "z-50",
-          );
-          navWrapper.style.height = "auto";
-
-          navList.classList.remove("bg-white/20", "text-white");
-          navList.classList.add(
-            "bg-white/70",
-            "border-black/10",
-            "text-black",
-            "shadow-md",
-          );
-
-          searchBtn.classList.remove("hidden", "bg-white/70", "text-white");
-          searchBtn.classList.add("flex", "bg-white/70", "text-black");
-          logoPutih.classList.add("hidden");
-          logoColor.classList.remove("hidden");
-        } else {
-          navWrapper.classList.remove(
-            "fixed",
-            "top-21",
-            "left-0",
-            "right-0",
-            "z-50",
-          );
-          navPlaceholder.style.height = "0px";
-
-          navList.classList.remove(
-            "bg-white/70",
-            "border-black/10",
-            "text-black",
-            "shadow-md",
-          );
-          navList.classList.add("bg-white/20");
-
-          searchBtn.classList.add("hidden", "bg-white/70", "text-white");
-          searchBtn.classList.remove("flex", "bg-white/70", "text-black");
-          logoPutih.classList.remove("hidden");
-          logoColor.classList.add("hidden");
-
-          searchDropdown.classList.add("hidden");
-        }
+        });
       });
 
       searchBtn.addEventListener("click", (e) => {
@@ -6650,80 +6665,93 @@
 
       sections.forEach((section) => observer.observe(section));
     </script>
-
     <!-- SCRIPT SEARCH BAR -->
     <script>
       const searchWrapper = document.getElementById("searchWrapper");
       const searchWrapperbg = document.getElementById("searchWrapperbg");
       const searchPlaceholder = document.getElementById("searchPlaceholder");
       const desiredTopm = 10;
-      const searchOffset =
-        searchWrapper.getBoundingClientRect().top +
-        window.scrollY -
-        desiredTopm;
 
+      function getSearchOffset() {
+        return (
+          searchWrapper.getBoundingClientRect().top +
+          window.scrollY -
+          desiredTopm
+        );
+      }
+      let searchOffset = getSearchOffset();
+      window.addEventListener("resize", () => {
+        searchOffset = getSearchOffset();
+      });
+
+      let searchTicking = false;
       window.addEventListener("scroll", () => {
-        if (window.innerWidth >= 1024) {
-          searchWrapper.classList.remove(
-            "fixed",
-            "top-[16px]",
-            "left-[16px]",
-            "right-[16px]",
-            "z-50",
-            "mt-0",
-          );
-          searchWrapper.classList.add(
-            "relative",
-            "mt-20",
-            "md:mt-10",
-            "w-full",
-          );
-          searchWrapperbg.classList.remove("bg-white/70");
-          searchWrapperbg.classList.add("bg-white/20");
-          searchPlaceholder.style.height = "0px";
-          return;
-        }
+        if (searchTicking) return;
+        searchTicking = true;
+        requestAnimationFrame(() => {
+          searchTicking = false;
 
-        if (window.scrollY > searchOffset) {
-          if (!searchWrapper.classList.contains("fixed")) {
-            // ukur tinggi SEBELUM lepas dari flow (termasuk margin biar placeholder akurat)
-            const rect = searchWrapper.getBoundingClientRect();
-            const style = window.getComputedStyle(searchWrapper);
-            const marginTop = parseFloat(style.marginTop) || 0;
-            searchPlaceholder.style.height = rect.height + marginTop + "px";
+          if (window.innerWidth >= 1024) {
+            searchWrapper.classList.remove(
+              "fixed",
+              "top-[16px]",
+              "left-[16px]",
+              "right-[16px]",
+              "z-50",
+              "mt-0",
+            );
+            searchWrapper.classList.add(
+              "relative",
+              "mt-20",
+              "md:mt-10",
+              "w-full",
+            );
+            searchWrapperbg.classList.remove("bg-white/70");
+            searchWrapperbg.classList.add("bg-white/20");
+            searchPlaceholder.style.height = "0px";
+            return;
           }
-          searchWrapper.classList.remove(
-            "relative",
-            "mt-20",
-            "md:mt-10",
-            "w-full",
-          );
-          searchWrapper.classList.add(
-            "fixed",
-            "top-[16px]",
-            "left-[16px]",
-            "right-[16px]",
-            "z-50",
-            "mt-0",
-          );
 
-          searchWrapperbg.classList.remove("bg-white/20", "text-white");
-          searchWrapperbg.classList.add("bg-white/70", "text-black");
-        } else {
-          searchWrapper.classList.remove(
-            "fixed",
-            "top-[16px]",
-            "left-[16px]",
-            "right-[16px]",
-            "z-50",
-            "mt-0",
-          );
-          searchWrapper.classList.add("relative", "mt-20", "w-full");
-          searchPlaceholder.style.height = "0px";
+          if (window.scrollY > searchOffset) {
+            if (!searchWrapper.classList.contains("fixed")) {
+              const rect = searchWrapper.getBoundingClientRect();
+              const style = window.getComputedStyle(searchWrapper);
+              const marginTop = parseFloat(style.marginTop) || 0;
+              searchPlaceholder.style.height = rect.height + marginTop + "px";
+            }
+            searchWrapper.classList.remove(
+              "relative",
+              "mt-20",
+              "md:mt-10",
+              "w-full",
+            );
+            searchWrapper.classList.add(
+              "fixed",
+              "top-[16px]",
+              "left-[16px]",
+              "right-[16px]",
+              "z-50",
+              "mt-0",
+            );
 
-          searchWrapperbg.classList.remove("bg-white/70", "text-black");
-          searchWrapperbg.classList.add("bg-white/20", "text-white");
-        }
+            searchWrapperbg.classList.remove("bg-white/20", "text-white");
+            searchWrapperbg.classList.add("bg-white/70", "text-black");
+          } else {
+            searchWrapper.classList.remove(
+              "fixed",
+              "top-[16px]",
+              "left-[16px]",
+              "right-[16px]",
+              "z-50",
+              "mt-0",
+            );
+            searchWrapper.classList.add("relative", "mt-20", "w-full");
+            searchPlaceholder.style.height = "0px";
+
+            searchWrapperbg.classList.remove("bg-white/70", "text-black");
+            searchWrapperbg.classList.add("bg-white/20", "text-white");
+          }
+        });
       });
     </script>
 
