@@ -83,8 +83,10 @@ function showFinalResult() {
         keyboard: false,
         show: true,
       });
-      $(".close-quiz-result-modal").click(function () {
-        window.location.href = "index.html";
+      $(".close-quiz-result-modal").click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.reload();
       });
 
       shareImage = value.image;
