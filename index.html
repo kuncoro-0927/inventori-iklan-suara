@@ -6503,13 +6503,97 @@
       const desiredTop = 20;
 
       function getNavOffset() {
-        return (
-          navWrapper.getBoundingClientRect().top + window.scrollY - desiredTop
-        );
+        // reset dulu ke kondisi normal sebelum ngukur, biar akurat
+        const wasFixed = navWrapper.classList.contains("fixed");
+        if (wasFixed) {
+          navWrapper.classList.remove(
+            "fixed",
+            "top-21",
+            "left-0",
+            "right-0",
+            "z-50",
+          );
+        }
+
+        const offset =
+          navWrapper.getBoundingClientRect().top + window.scrollY - desiredTop;
+
+        if (wasFixed) {
+          navWrapper.classList.add(
+            "fixed",
+            "top-21",
+            "left-0",
+            "right-0",
+            "z-50",
+          );
+        }
+
+        return offset;
       }
+
       let navOffset = getNavOffset();
+
+      function updateNavBarState() {
+        if (window.scrollY > navOffset) {
+          if (!navWrapper.classList.contains("fixed")) {
+            navPlaceholder.style.height = navWrapper.offsetHeight + "px";
+          }
+
+          navWrapper.classList.add(
+            "fixed",
+            "top-21",
+            "left-0",
+            "right-0",
+            "z-50",
+          );
+          navWrapper.style.height = "auto";
+
+          navList.classList.remove("bg-white/20", "text-white");
+          navList.classList.add(
+            "bg-white/70",
+            "border-black/10",
+            "text-black",
+            "shadow-md",
+          );
+
+          searchBtn.classList.remove("hidden", "bg-white/70", "text-white");
+          searchBtn.classList.add("flex", "bg-white/70", "text-black");
+          logoPutih.classList.add("hidden");
+          logoColor.classList.remove("hidden");
+        } else {
+          navWrapper.classList.remove(
+            "fixed",
+            "top-21",
+            "left-0",
+            "right-0",
+            "z-50",
+          );
+          navPlaceholder.style.height = "0px";
+
+          navList.classList.remove(
+            "bg-white/70",
+            "border-black/10",
+            "text-black",
+            "shadow-md",
+          );
+          navList.classList.add("bg-white/20");
+
+          searchBtn.classList.add("hidden", "bg-white/70", "text-white");
+          searchBtn.classList.remove("flex", "bg-white/70", "text-black");
+          logoPutih.classList.remove("hidden");
+          logoColor.classList.add("hidden");
+
+          searchDropdown.classList.add("hidden");
+        }
+      }
+
+      let resizeTimeoutnav;
       window.addEventListener("resize", () => {
-        navOffset = getNavOffset();
+        clearTimeout(resizeTimeoutnav);
+        resizeTimeoutnav = setTimeout(() => {
+          navOffset = getNavOffset();
+          updateNavBarState();
+        }, 100);
       });
 
       let navTicking = false;
@@ -6518,60 +6602,12 @@
         navTicking = true;
         requestAnimationFrame(() => {
           navTicking = false;
-
-          if (window.scrollY > navOffset) {
-            if (!navWrapper.classList.contains("fixed")) {
-              navPlaceholder.style.height = navWrapper.offsetHeight + "px";
-            }
-
-            navWrapper.classList.add(
-              "fixed",
-              "top-21",
-              "left-0",
-              "right-0",
-              "z-50",
-            );
-            navWrapper.style.height = "auto";
-
-            navList.classList.remove("bg-white/20", "text-white");
-            navList.classList.add(
-              "bg-white/70",
-              "border-black/10",
-              "text-black",
-              "shadow-md",
-            );
-
-            searchBtn.classList.remove("hidden", "bg-white/70", "text-white");
-            searchBtn.classList.add("flex", "bg-white/70", "text-black");
-            logoPutih.classList.add("hidden");
-            logoColor.classList.remove("hidden");
-          } else {
-            navWrapper.classList.remove(
-              "fixed",
-              "top-21",
-              "left-0",
-              "right-0",
-              "z-50",
-            );
-            navPlaceholder.style.height = "0px";
-
-            navList.classList.remove(
-              "bg-white/70",
-              "border-black/10",
-              "text-black",
-              "shadow-md",
-            );
-            navList.classList.add("bg-white/20");
-
-            searchBtn.classList.add("hidden", "bg-white/70", "text-white");
-            searchBtn.classList.remove("flex", "bg-white/70", "text-black");
-            logoPutih.classList.remove("hidden");
-            logoColor.classList.add("hidden");
-
-            searchDropdown.classList.add("hidden");
-          }
+          updateNavBarState();
         });
       });
+
+      // jalankan sekali di awal
+      updateNavBarState();
 
       searchBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -6666,6 +6702,7 @@
 
       sections.forEach((section) => observer.observe(section));
     </script>
+
     <!-- SCRIPT SEARCH BAR -->
     <script>
       const searchWrapper = document.getElementById("searchWrapper");
@@ -6674,15 +6711,122 @@
       const desiredTopm = 10;
 
       function getSearchOffset() {
-        return (
+        // ukur dalam kondisi normal dulu (bukan fixed), biar akurat
+        const wasFixed = searchWrapper.classList.contains("fixed");
+        if (wasFixed) {
+          searchWrapper.classList.remove(
+            "fixed",
+            "top-[16px]",
+            "left-[16px]",
+            "right-[16px]",
+            "z-50",
+            "mt-0",
+          );
+          searchWrapper.classList.add(
+            "relative",
+            "mt-20",
+            "md:mt-10",
+            "w-full",
+          );
+        }
+
+        const offset =
           searchWrapper.getBoundingClientRect().top +
           window.scrollY -
-          desiredTopm
-        );
+          desiredTopm;
+
+        if (wasFixed) {
+          searchWrapper.classList.remove(
+            "relative",
+            "mt-20",
+            "md:mt-10",
+            "w-full",
+          );
+          searchWrapper.classList.add(
+            "fixed",
+            "top-[16px]",
+            "left-[16px]",
+            "right-[16px]",
+            "z-50",
+            "mt-0",
+          );
+        }
+
+        return offset;
       }
+
       let searchOffset = getSearchOffset();
+
+      function updateSearchBarState() {
+        if (window.innerWidth >= 1024) {
+          searchWrapper.classList.remove(
+            "fixed",
+            "top-[16px]",
+            "left-[16px]",
+            "right-[16px]",
+            "z-50",
+            "mt-0",
+          );
+          searchWrapper.classList.add(
+            "relative",
+            "mt-20",
+            "md:mt-10",
+            "w-full",
+          );
+          searchWrapperbg.classList.remove("bg-white/70", "text-black");
+          searchWrapperbg.classList.add("bg-white/20", "text-white");
+          searchPlaceholder.style.height = "0px";
+          return;
+        }
+
+        if (window.scrollY > searchOffset) {
+          if (!searchWrapper.classList.contains("fixed")) {
+            const rect = searchWrapper.getBoundingClientRect();
+            const style = window.getComputedStyle(searchWrapper);
+            const marginTop = parseFloat(style.marginTop) || 0;
+            searchPlaceholder.style.height = rect.height + marginTop + "px";
+          }
+          searchWrapper.classList.remove(
+            "relative",
+            "mt-20",
+            "md:mt-10",
+            "w-full",
+          );
+          searchWrapper.classList.add(
+            "fixed",
+            "top-[16px]",
+            "left-[16px]",
+            "right-[16px]",
+            "z-50",
+            "mt-0",
+          );
+
+          searchWrapperbg.classList.remove("bg-white/20", "text-white");
+          searchWrapperbg.classList.add("bg-white/70", "text-black");
+        } else {
+          searchWrapper.classList.remove(
+            "fixed",
+            "top-[16px]",
+            "left-[16px]",
+            "right-[16px]",
+            "z-50",
+            "mt-0",
+          );
+          searchWrapper.classList.add("relative", "mt-20", "w-full");
+          searchPlaceholder.style.height = "0px";
+
+          searchWrapperbg.classList.remove("bg-white/70", "text-black");
+          searchWrapperbg.classList.add("bg-white/20", "text-white");
+        }
+      }
+
+      let resizeTimeout;
       window.addEventListener("resize", () => {
-        searchOffset = getSearchOffset();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          searchOffset = getSearchOffset();
+          updateSearchBarState();
+        }, 100);
       });
 
       let searchTicking = false;
@@ -6691,69 +6835,12 @@
         searchTicking = true;
         requestAnimationFrame(() => {
           searchTicking = false;
-
-          if (window.innerWidth >= 1024) {
-            searchWrapper.classList.remove(
-              "fixed",
-              "top-[16px]",
-              "left-[16px]",
-              "right-[16px]",
-              "z-50",
-              "mt-0",
-            );
-            searchWrapper.classList.add(
-              "relative",
-              "mt-20",
-              "md:mt-10",
-              "w-full",
-            );
-            searchWrapperbg.classList.remove("bg-white/70");
-            searchWrapperbg.classList.add("bg-white/20");
-            searchPlaceholder.style.height = "0px";
-            return;
-          }
-
-          if (window.scrollY > searchOffset) {
-            if (!searchWrapper.classList.contains("fixed")) {
-              const rect = searchWrapper.getBoundingClientRect();
-              const style = window.getComputedStyle(searchWrapper);
-              const marginTop = parseFloat(style.marginTop) || 0;
-              searchPlaceholder.style.height = rect.height + marginTop + "px";
-            }
-            searchWrapper.classList.remove(
-              "relative",
-              "mt-20",
-              "md:mt-10",
-              "w-full",
-            );
-            searchWrapper.classList.add(
-              "fixed",
-              "top-[16px]",
-              "left-[16px]",
-              "right-[16px]",
-              "z-50",
-              "mt-0",
-            );
-
-            searchWrapperbg.classList.remove("bg-white/20", "text-white");
-            searchWrapperbg.classList.add("bg-white/70", "text-black");
-          } else {
-            searchWrapper.classList.remove(
-              "fixed",
-              "top-[16px]",
-              "left-[16px]",
-              "right-[16px]",
-              "z-50",
-              "mt-0",
-            );
-            searchWrapper.classList.add("relative", "mt-20", "w-full");
-            searchPlaceholder.style.height = "0px";
-
-            searchWrapperbg.classList.remove("bg-white/70", "text-black");
-            searchWrapperbg.classList.add("bg-white/20", "text-white");
-          }
+          updateSearchBarState();
         });
       });
+
+      // jalankan sekali di awal biar state awal juga bener
+      updateSearchBarState();
     </script>
 
     <!-- SCRIPT FLOATING BUTTON -->
